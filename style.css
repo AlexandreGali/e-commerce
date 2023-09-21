@@ -1,0 +1,1869 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+/* font-family: 'Baskervville', serif; */
+.freeshiping {
+    display: inline-flex;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-size: 0.88rem;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+.navbar {
+    display: flex;
+    background-color: #EAE5DD;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;    
+    border-bottom: solid 1px black;    
+    padding: 0 15px;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 3;
+}
+.navbargauche li{
+    display: inline-flex;
+    padding: 0 0.7rem;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.80rem;
+    margin-left: 7px;
+    letter-spacing: 0.1rem;
+    padding-top: 40px;
+}
+.navbargauche i {
+    margin-left: 5px;
+}
+.navbarlogo {
+    margin-left: 4.9rem;
+}
+.navbardroite {
+    margin-right: 2.9rem;
+}
+.navbardroite i {
+    margin-left: 2px;
+}
+.navbardroite li{
+    display: inline-flex;
+    padding: 0 0.7rem;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.80rem;
+    letter-spacing: 0.1rem;
+}
+.navbardroite img {
+    margin-right: 4px;
+}
+/* /////////////////////////////////////////////////////////////////////////////////
+////////         MENU DEROULANT 
+//////////////////////////////////////////////////////////////////////////////// */
+.dmg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #EAE5DD;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    top: 65px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+.dmg:hover {
+    border-bottom: solid 1px black;
+}
+.cmg {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0px 110px;
+}
+.submenu-item {
+    width: 100%;
+    background: #EAE5DD;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 50px 0px;   
+    cursor: pointer; 
+    position: relative;
+}
+.submenu-item h2 {
+    font-family: 'Baskervville', serif;
+    margin-top: 50px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    font-size: 1.6rem;
+    color: black;
+}
+.submenu-item h2:hover {
+    text-decoration: underline;
+}
+.submenu-item a {
+    padding: 0;
+    background: none;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+}
+.submenu-item a:hover {
+    text-decoration: none;
+}
+a.mg:hover + .dmg {
+    display: block;
+    height: 640px;
+    width: 100%;
+    border-bottom: solid 1px black;
+}
+.dmg:hover {
+    display: block;
+    height: 640px;
+    width: 100%;
+}
+a.mg {
+    text-decoration: none;
+    color: black;
+    height: 60px;
+}
+.btn-choix-produit-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.btn-choix-produit-menu button {
+    margin-top: 20px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.btn-choix-produit-menu button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.btn-choix-produit-menu button:first-child {
+    margin-right: 24px;
+}
+.btn-choix-produit-menu button:last-child {
+    margin-left: 24px;
+}
+.hr-menu-deroulant {
+    height: 16px;
+    width: 1px;
+    color: black;
+    background-color: black;
+    border: none;
+    margin-top: 18px;
+}
+.btn-shop-all {
+    margin-top: 10px;
+}
+.btn-shop-all a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: solid 1px black;
+    padding: 15px 90px;
+}
+.btn-shop-all a:hover {
+    border: none;
+    background: none;
+    color: black;
+}
+.image-produit-menu {
+    position: relative;
+    text-align: center;
+  }
+  .image-produit-menu img {
+    display: block;
+    margin: 0 auto;
+  }
+  .image-overlay2 {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: 1; /* Place l'image overlay au-dessus de l'image de base */
+    transition: opacity 0.1s ease;
+    left: 46px;
+  }
+  .image-bg3 {
+    left: 15px;
+  }
+  .image-overlay3 {
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    z-index: 1; /* Place l'image overlay au-dessus de l'image de base */
+    transition: opacity 0.1s ease;
+    left: 110px;
+  }
+  .image-overlay4 {
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    z-index: 1; /* Place l'image overlay au-dessus de l'image de base */
+    transition: opacity 0.1s ease;
+    left: 15px;
+  }
+/* ****************************************************************************
+/* *-*-*-*-*-*-*-*-*-*-*-*-* contenu slider ******************** 
+**************************************************************************** */
+.content {
+    padding-top: 4rem;
+    border-bottom: solid 1px black;
+    margin-bottom: 10px;
+    display: flex;
+    height: 53.75rem;
+}
+.katy {
+    margin-top: 2.59rem;
+    height: 55.79rem;
+    width: 50%; 
+    /* modifier pour responsive !!!!!!!!!!!!!!! */
+}
+.spritz {
+    background-color: #BC6B1D;
+    width: 100%;
+    color: #FFFFFF;
+    height: 819px;
+    position: relative;
+    top: 4.8%;
+}
+.spritz h1 {
+    font-family: 'Baskervville', serif;
+    padding-top: 320px;
+    text-align: center;
+    font-size: 4.4rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+}
+.spritz p {
+    padding-top: 18px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+}
+.spritz a {
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;
+    left: 45%;
+    font-weight: 700;
+    line-height: 30px;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+.spritz a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+.spritz a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+.imgslider {
+    position: relative;
+    top: 105px;
+    border-bottom: solid 1px black;
+    height: 819px;
+}
+/* 
+****************************************************************************
+**                              SLIDER **** 
+*****************************************************************************/
+.slider-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    max-width: 1902px;
+  }
+  .slider {
+    display: flex;
+    width: 200%;
+    transition: transform 0.7s ease;
+  }
+  .slide {
+    flex: 0 0 100vw;
+    /* height: 400px; */
+    position: relative;
+  }
+  .arrow {
+    position: absolute;
+    bottom: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .arrow.left {
+    left: 41%;
+    font-size: 30px;
+  }
+  .arrow.right {
+    right: 41%;
+    font-size: 30px;
+  }  
+  .position-indicators {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }  
+  .indicator {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(57, 57, 57, 0.467);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }  
+  .indicator.active {
+    background-color: black;
+  }
+  /* *                   **************** APERO ************** */
+  .container-apero {
+    display: flex;
+    background-color: #EAE5DD;
+    width: 100%;
+    height: 750px;
+    margin-top: -10px;
+    border-bottom: 1px solid black;
+  }
+  .photo-apero {
+    margin: 2.1% 8.2%;
+    width: 37%;
+    height: 100%;
+  }
+  .texte-apero {
+    width: 63%;
+    margin: 150px 30px;
+    max-height: 750px;
+    margin-top: 240px;
+  }
+  .texte-apero h2 {
+    font-size: 1rem;
+    letter-spacing: 1.7px;
+  }
+  .texte-apero h1 {
+    font-family: 'Baskervville', serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+    padding-top: 8px;
+    margin-left: -3px;
+    padding-bottom: 20px;
+  }
+  .texte-apero p {
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+  .texte-apero a {
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 12px 40px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #BB6B1E;
+    transition: background-color 0.3s ease;
+  }
+  .texte-apero a:hover {
+    background-color: black;    
+  }
+  /*                     *************** REVIEW ************ */
+.review1, .review2, .review3, .review4, .review5, .review6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 95px;
+    height: 100%;
+}
+.review1 {
+    margin-right: 110px;
+}
+.review2 {
+    margin-right: 38px;
+}
+.review3 {
+    margin-left: 60px;
+}
+.review4 {
+    margin-left: -70px;
+}
+.review5 {
+    margin-right: 25px;
+}
+.review1 p.quote {
+    font-size: 56px;
+    letter-spacing: -8px;
+}
+.review2 p.quote {
+    font-size: 56px;
+    letter-spacing: -8px;
+}
+.review3 p.quote {
+    font-size: 56px;
+    letter-spacing: -8px;
+}
+.review4 p.quote {
+    font-size: 56px;
+    letter-spacing: -8px;
+}
+.review5 p.quote {
+    font-size: 56px;
+    letter-spacing: -8px;
+}
+.review6 p.quote {
+    font-size: 56px;
+    letter-spacing: -8px;
+}
+.review1 p.quote:first-child {
+    transform: rotate(180deg);
+    margin-bottom: -30px;
+}
+.review2 p.quote:first-child {
+    transform: rotate(180deg);
+    margin-bottom: -30px;
+}
+.review3 p.quote:first-child {
+    transform: rotate(180deg);
+    margin-bottom: -30px;
+}
+.review4 p.quote:first-child {
+    transform: rotate(180deg);
+    margin-bottom: -30px;
+}
+.review5 p.quote:first-child {
+    transform: rotate(180deg);
+    margin-bottom: -30px;
+}
+.review6 p.quote:first-child {
+    transform: rotate(180deg);
+    margin-bottom: -30px;
+}
+.review1 p.texte {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: -30px;
+}
+.review2 p.texte {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: -30px;
+}
+.review3 p.texte {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: -30px;
+}
+.review4 p.texte {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: -30px;
+}
+.review5 p.texte {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: -30px;
+}
+.review6 p.texte {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: -30px;
+}
+.review1 img {
+    margin-top: 65px;
+}
+.review2 img {
+    margin-top: 65px;
+}
+.review3 img {
+    margin-top: 65px;
+}
+.review4 img {
+    margin-top: 65px;
+}
+.review5 img {
+    margin-top: 65px;
+}
+.review6 img {
+    margin-top: 65px;
+}
+.slider-container2 {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    position: relative;
+    background-color: #E7CDFF;
+    border-bottom: solid 1px black;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+.slider2 {
+    display: flex;
+    width: 100%; 
+    transition: transform 0.8s ease;
+}
+.slide2 {
+    flex: 0 0 100vw;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+}
+.review2 img {
+    max-width: 100%;
+    height: auto;
+}
+.position-indicators2 {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.indicator2 {
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.indicator2.active2 {
+    background-color: black;
+}
+/* *********                                      SHOP APERITIFS ************* */
+.titre-apero {
+    background-color: #EAE5DD;
+}
+.titre-apero h1 {
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -0.2rem;
+    padding: 30px 0;
+}
+.slider-container3 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #EAE5DD;
+    border: solid 1px black;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+.slider3 {
+    display: flex;
+    width: 100%; 
+    transition: transform 0.8s ease;
+    box-sizing: border-box;
+}
+.slide3 {
+    flex: 0 0 100vw;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.produit1, .produit2, .produit3, .produit4, .produit5, .produit6, .produit7, .produit8 {
+    border-right: solid 1px black;
+    width: 25%;
+    height: 800px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.image-container {
+    position: relative;
+    /* overflow: hidden; */
+    height: 0; /* Permettra de définir la hauteur de l'image */
+    padding-bottom: 100%;
+    width: 100%;
+}
+
+.image-bg,
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay {
+    opacity: 0; /* L'image overlay est invisible par défaut */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.produit1:hover, .produit2:hover, .produit3:hover, .produit4:hover, .produit5:hover, .produit6:hover, .produit7:hover, .produit8:hover {
+    cursor: pointer;
+}
+.produit1:hover .image-bg, .produit2:hover .image-bg, .produit3:hover .image-bg, .produit4:hover .image-bg, .produit5:hover .image-bg, .produit6:hover .image-bg, .produit7:hover .image-bg, .produit8:hover .image-bg {
+    opacity: 0; /* L'image de fond devient invisible au survol */
+}
+
+.produit1:hover .image-overlay, .produit2:hover .image-overlay, .produit3:hover .image-overlay, .produit4:hover .image-overlay, .produit5:hover .image-overlay, .produit6:hover .image-overlay, .produit7:hover .image-overlay, .produit8:hover .image-overlay {
+    opacity: 1; /* L'image overlay devient visible au survol */
+}
+
+.produit1 h4, .produit1 p, .produit2 h4, .produit2 p, .produit3 h4, .produit3 p, .produit4 h4, .produit4 p, .produit5 h4, .produit5 p, .produit6 h4, .produit6 p, .produit7 h4, .produit7 p, .produit8 h4, .produit8 p {
+    padding: 0 50px;
+}
+.produit1 h4, .produit2 h4, .produit3 h4, .produit4 h4, .produit5 h4, .produit6 h4, .produit7 h4, .produit8 h4 {
+    font-family: 'Baskervville', serif;
+    font-weight: 300;
+    letter-spacing: -0.2rem;
+    font-size: 1.8rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.produit1 p, .produit2 p, .produit3 p, .produit4 p, .produit5 p, .produit6 p, .produit7 p, .produit8 p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+.produit1 a, .produit2 a, .produit3 a, .produit4 a, .produit5 a, .produit6 a, .produit7 a, .produit8 a, .presentation-bouteille a, .presentation-can a {
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+}
+.produit1 a::before, .produit2 a::before, .produit3 a::before, .produit4 a::before, .produit5 a::before, .produit6 a::before, .produit7 a::before, .produit8 a::before, .presentation-bouteille a::before, .presentation-can a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+
+.produit1 a:hover::before, .produit2 a:hover::before, .produit3 a:hover::before, .produit4 a:hover::before, .produit5 a:hover::before, .produit6 a:hover::before, .produit7 a:hover::before, .produit8 a:hover::before, .presentation-bouteille a:hover::before, .presentation-can a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+.arrow3 {
+    position: absolute;
+    bottom: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.arrow3.left3 {
+    left: 1%;
+    top: 50%;
+    font-size: 30px;
+}
+.arrow3.right3 {
+    right: 1%;
+    top: 50%;
+    font-size: 30px;
+}  
+.produit4, .produit8 {
+    border-right: none;
+}
+.produit5 {
+    border-left: solid 1px black;
+}
+/* ************************ Meet our founders ********* */
+.container-founders {
+    display: flex;
+    background-color: #EAE5DD;
+}
+.container-founders img {
+    margin: 2.1% 4.3%;
+    width: 43%;
+}
+.partie-droite-founders {
+    width: 50%;
+    max-width: 35%;
+    margin: 250px 20px;
+}
+.partie-droite-founders h4 {
+    font-family: 'Baskervville', serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+    margin-bottom: 25px;
+}
+.partie-droite-founders p {
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+.partie-droite-founders a {
+    text-decoration: none;
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: black;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.partie-droite-founders a:hover {
+    color: #d57776;
+}
+.partie-droite-founders a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+.partie-droite-founders a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+/* ************* behind the spritz ************* */
+.container-behind {
+    width: 100%;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    height: 673px;
+}
+.container-behind img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+.container-behind2 {
+    width: 100%;
+    border-bottom: solid 1px black;
+    display: flex;
+    background-color: #EAE5DD;
+}
+.container-behind2 img {
+    margin: 2.1% 8.2%;
+    width: 37%;
+    height: 100%;
+}
+.partie-gauche-behind {
+    width: 55%;
+    margin: 150px 150px;
+    max-height: 750px;
+    margin-top: 160px;
+}
+.partie-gauche-behind h4 {
+    font-family: 'Baskervville', serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+    margin-bottom: 25px;
+}
+.p1-behind {
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+.partie-gauche-behind p {
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+.partie-gauche-behind a {
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    line-height: 30px;
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+.partie-gauche-behind a:hover {
+    color: #d57776;
+}
+.partie-gauche-behind a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+.partie-gauche-behind a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+/* ******************* natural botanicals *********** */
+.container-botanicals {
+    width: 100%;
+    height: 720px;
+    background-color: #EAE5DD;
+}
+.texte-botanicals {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 50px 25%;
+}
+.texte-botanicals h4 {
+    font-family: 'Baskervville', serif;
+    font-size: 3.7rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.texte-botanicals p {
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+.texte-botanicals a {
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    line-height: 30px;
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+.texte-botanicals a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+.texte-botanicals a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+.photos-botanicals {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 220px;
+}
+
+/* ******** photo + pour one out ********* */
+.container-inspired {
+    width: 100%;
+    height: auto;
+}
+.container-inspired img {
+    width: 100%;
+    height: auto;
+    border-bottom: solid 1px black;
+}
+.container-inspired img:hover {
+    cursor: pointer;
+}
+.container-apero2 {
+    display: flex;
+    background-color: #EAE5DD;
+    width: 100%;
+    height: 750px;
+    margin-top: -10px;
+  }
+.texte-apero2 {
+    width: 63%;
+    margin: 150px 30px;
+    max-height: 750px;
+    margin-top: 240px;
+  }
+  .texte-apero2 h2 {
+    font-size: 0.8rem;
+    letter-spacing: 1.3px;
+  }
+  .texte-apero2 h1 {
+    font-family: 'Baskervville', serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+    padding-top: 8px;
+    margin-left: -3px;
+    padding-bottom: 20px;
+  }
+  .texte-apero2 p {
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+  .texte-apero2 a {
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  .texte-apero2 a:hover {
+    color: #d57776;
+}
+.texte-apero2 a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+.texte-apero2 a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+/* ******* refer a friend ****** */
+.container-refer-a-friend {
+    width: 100%;
+    height: 530px;
+}
+.container-refer-a-friend img {
+    width: 100%;
+    height: auto;
+}
+.container-refer-a-friend:hover {
+    cursor: pointer;
+}
+/* ***** find your flavor **** */
+.container-flavor {
+    width: 100%;
+    border-bottom: solid 1px black;
+    display: flex;
+    background-color: #EAE5DD;
+    height: 750px;
+}
+.container-flavor img {
+    margin-top: 6%;
+    margin-left: 5%;
+    max-width: 100%;
+}
+.texte-flavor {
+    width: 45%;
+    max-height: 750px;
+    margin-top: 270px;
+    margin-left: 10%;
+}
+.texte-flavor h2 {
+    font-size: 0.8rem;
+    letter-spacing: 1.3px;
+}
+.texte-flavor h1 {
+    font-family: 'Baskervville', serif;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: -0.2rem;
+    padding-top: 8px;
+    margin-left: -3px;
+    padding-bottom: 20px;
+}
+.texte-flavor p {
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+.texte-flavor a {
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+    line-height: 30px;
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+.texte-flavor a:hover {
+    color: #d57776;
+}
+.texte-flavor a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s ease, opacity 0.8s ease;
+}
+.texte-flavor a:hover::before {
+    transform: scaleX(0);
+    opacity: 0;
+}
+.join-us {
+    background-color: #EAE5DD;
+    border-bottom: solid 1px black;
+}
+.join-us h1 {
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -0.2rem;
+    padding: 30px 0;
+}
+.join-us i {
+    font-family: 'Baskervville', serif;
+}
+.container-photo-insta {
+    width: 100%;
+    height: 635px;
+}
+.container-photo-insta img {
+    width: 100%;
+}
+/* ****************** FOOTER ****************** */
+/* ********* partie gauche ************ */
+.container-footer {
+    height: 340px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+}
+.footer-gauche {
+    width: 55%;
+    height: 75%;
+    margin: 0 6.5%;
+    margin-top: 80px;
+}
+.footer-gauche h6 {
+    font-family: 'Baskervville', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+    color: white;
+}
+.footer-gauche p {
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: white;
+}
+input[id="email"]{
+    width: 70%;
+    border: solid 1px white;
+    padding: 36px 20px;
+    color: white;
+    background-color: #000000;
+}
+#email::placeholder {
+    color: white; 
+  }
+  
+.input-with-image {
+    position: relative;
+}
+.input-with-image input[type="text"] {
+    padding-right: 30px; /* Ajustez ce nombre pour l'espacement de l'image */
+}
+.input-with-image img {
+    position: absolute;
+    top: 50%;
+    right: 25%; /* Ajustez ce nombre pour l'espacement de l'image */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.logo-reseaux {
+    max-width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -10px;
+    margin-top: 25px;
+}
+.logo-reseaux i {
+    color: white;
+    margin-right: 5px;
+}
+.footer-droite {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "gau mid dro";
+    width: 80%;
+    /* margin-left: 11%; */
+}
+.footer-droite-gauche {
+    grid-area: gau;
+    width: 160px;
+    height: 200px;
+    margin-top: 80px;
+    margin-left: 10%;
+}
+.footer-droite-gauche p {
+    color: white;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-droite-gauche a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.footer-droite-mid {
+    grid-area: mid;
+    width: 160px;
+    height: 200px;
+    margin-top: 80px;
+}
+.footer-droite-mid p {
+    color: white;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-droite-mid a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.footer-droite-droite {
+    grid-area: dro;
+    width: 160px;
+    height: 200px;
+    margin-top: 80px;
+    margin-left: -20px;
+}
+.footer-droite-droite p {
+    color: white;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-droite-droite a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.footer-bas {
+    display: flex;
+    background-color: black;
+    padding-left: 6.7%;
+    padding-top: 35px;
+    padding-bottom: 27px;
+}
+.footer-bas p, .footer-bas a {
+    color: #6d6b67;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.deswa {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 28px;
+    margin-right: 20px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                  PAGE CHAMPIGNON DREAMS
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.home-champ-dreams {
+    margin-top: 105px;
+    background: #EAE5DD;
+    border-bottom: solid 1px black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.home-champ-dreams a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.85rem;
+}
+.home-champ-dreams i {
+    padding: 0 10px;
+}
+.home-champ-dreams a:first-child {
+    margin-left: 35px;
+    color: #a5a5a5;
+}
+.titre-shop-champignon {
+    background: #EAE5DD;
+    border-bottom: solid 1px black;
+}
+.titre-shop-champignon h1 {
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 500;
+    letter-spacing: -0.2rem;
+    padding: 36px 0;
+}
+/* //// PRESENTATION PRODUIT DETAIL ///// */
+.presentation-produit-champignon {
+    display: flex;
+    border-top: solid 1px black;
+    background: #EAE5DD;
+    height: 915px;
+}
+.presentation-texte {
+    max-width: 30%;
+    border-right: solid 1px black;
+    padding: 50px 35px;
+}
+.titre-produit {
+    border-bottom: solid 1px black;
+}
+.titre-produit h3 {
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: -0.2rem;
+}
+.titre-produit i {
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: -0.2rem;
+}
+.titre-produit p {
+    text-align: center;
+    margin-top: 27px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+.ingredient-produit {
+    border-bottom: solid 1px black;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.ingredient-produit p {
+    font-size: 0.85rem;
+    line-height: 22px;
+}
+.trois-ingredients-dessins {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+.flavor-notes {
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+.flavor-notes p {
+    margin-top: 22px;
+    margin-bottom: 7px;
+}
+.barres-flavors-1 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur1 {
+    background:#E7CDFF;
+    height: 38px;
+    width: 80%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc1 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 20%;
+}
+.barres-flavors-2 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur2 {
+    background:#E7CDFF;
+    height: 38px;
+    width: 66%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc2 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 34%;
+}
+.barres-flavors-3 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur3 {
+    background:#E7CDFF;
+    height: 38px;
+    width: 55%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc3 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 45%;
+}
+.presentation-bouteille {
+    width: 33.3%;
+    border-right: solid 1px black;
+    text-align: center;
+    padding-top: 35px;
+    position: relative;
+    background: #EAE5DD;
+}
+.presentation-bouteille img, .presentation-can img {
+    cursor: pointer;
+    max-width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+.image-bg5 {
+    opacity: 1;
+  }
+.image-bg5, .image-overlay5 {
+    margin: 0;
+    padding: 0;
+}
+.image-overlay5 {
+    opacity: 0; 
+    /* margin-top: 30px; */
+}
+.presentation-bouteille:hover .image-bg5, .presentation-can:hover .image-bg5 {
+    opacity: 0; 
+}
+.presentation-bouteille:hover .image-overlay5, .presentation-can:hover .image-overlay5 {
+    opacity: 1; 
+}
+.texte-presentation-bottle {
+    position: relative;
+    bottom: -75%;
+}
+.texte-presentation-bottle a {
+    padding-bottom: 4px;
+}
+.presentation-bouteille h4 {
+    font-family: 'Baskervville', serif;
+    font-weight: 300;
+    letter-spacing: -0.2rem;
+    font-size: 1.8rem;
+    padding-top: 20px;
+}
+.presentation-bouteille p {
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.texte-presentation-can {
+    position: relative;
+    bottom: -75%;
+}
+.presentation-can {
+    width: 33.3%;
+    text-align: center;
+    padding-top: 35px;
+    position: relative;
+    background: #EAE5DD;
+}
+.presentation-can h4 {
+    font-family: 'Baskervville', serif;
+    font-weight: 300;
+    letter-spacing: -0.2rem;
+    font-size: 1.8rem;
+    padding-top: 20px;
+}
+.presentation-can p {
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////// PAGE PRODUIT GOLDEN HOUR
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.barres-flavors-4 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur4 {
+    background:#AA981B;
+    height: 38px;
+    width: 80%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc4 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 20%;
+}
+.barres-flavors-5 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur5 {
+    background:#AA981B;
+    height: 38px;
+    width: 66%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc5 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 34%;
+}
+.barres-flavors-6 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur6 {
+    background:#AA981B;
+    height: 38px;
+    width: 55%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc6 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 45%;
+}
+/* /////////// PAGE ROSE /////// */
+.barres-flavors-7 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur7 {
+    background:#F2B0B9;
+    height: 38px;
+    width: 60%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc7 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 40%;
+}
+.barres-flavors-8 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur8 {
+    background:#F2B0B9;
+    height: 38px;
+    width: 80%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc8 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 20%;
+}
+.barres-flavors-9 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur9 {
+    background:#F2B0B9;
+    height: 38px;
+    width: 40%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc9 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 60%;
+}
+.barres-flavors-10 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur10 {
+    background:#005E45;
+    height: 38px;
+    width: 80%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc10 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 20%;
+}
+.barres-flavors-11 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur11 {
+    background:#005E45;
+    height: 38px;
+    width: 66%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc11 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 34%;
+}
+.barres-flavors-12 {
+    display: flex;
+    border: solid 1px black;
+}
+.barre-flavor-couleur12 {
+    background:#005E45;
+    height: 38px;
+    width: 55%;
+    border-right: solid 1px black
+}
+.barre-flavor-blanc12 {
+    background:#EAE5DD;
+    height: 38px;
+    width: 45%;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////// PAGE BOUTEILLE CHAMPIGNON
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.container-description-bottle {
+    display: flex;
+    width: 100%;
+    height: 970px;
+    border-bottom: solid 1px black;
+    position: relative;
+}
+.container-gauche-bottle {
+    width: 50.9%;
+    background:#BB6B1E;
+}
+.descriptif-produit-bottle {
+    margin: 8.37vh 5.29vh;
+    width: 60%;
+}
+.partie-superieure-bottle span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+.partie-superieure-bottle h2 {
+    font-family: 'Baskervville', serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+.flavor-bottle {
+    font-size: 0.85rem;
+    margin-top: 12px;
+}
+.partie-superieure-bottle p  {
+    font-size: 0.9rem;
+    margin-top: 12px;
+    padding-left: 8px;
+    margin-bottom: 18px;
+}
+.partie-superieure-bottle i:last-child {
+    padding-right: 5px;
+}
+.partie-milieu-bottle p {
+    margin-top: 18px;
+    font-size: 0.9rem;
+    line-height: 22px;
+}
+.partie-milieu-li-bottle {
+    padding: 25px 0;
+    border-bottom: solid 1px black
+}
+.partie-milieu-li-bottle ul {
+    font-size: 0.9rem;
+    margin-bottom: 5px;    
+}
+.partie-superieure-bottle {
+    border-bottom: solid 1px black;
+}
+.partie-milieu-li-bottle ul::before {
+    content: "\2022"; 
+    display: inline-block;
+    width: 10px; 
+    margin-right: 7px; 
+    color: #000; 
+    font-weight: bold; 
+}
+.partie-reseaux-bottle {
+    border-bottom: solid 1px black;
+    padding: 16px 0;
+}
+.partie-reseaux-bottle p {
+    font-size: 0.9rem;
+}
+.partie-reseaux-bottle i {
+    padding-left: 12px
+}
+.partie-lower-bottle {
+    display: flex;
+    padding: 16px 0;
+    cursor: pointer;
+}
+.partie-lower-bottle p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+.arrow-can {
+    margin-top: -4px;
+    margin-left: 5px;
+}
+.container-middle-slider {
+    width: 46vw;
+    overflow: hidden;
+    /* position: relative; */
+    position: absolute; 
+    z-index: 1; 
+    left: 35%;
+    width: 32%;
+  }
+  .slider10 {
+    display: flex;
+    width: 400%;
+    transition: transform 0.7s ease;
+  }
+  .slide10 {
+    flex: 0 0 100vw;
+    position: relative;
+  }
+.content10 {
+    display: flex;
+    margin-top: 9.75vh;
+}
+.img1-slider-champ-bottle {
+    margin-left: 10.41vw;
+}
+
+.arrow10 {
+    position: absolute;
+    top: 90.5%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.arrow10.left {
+    left: 41%;
+    font-size: 30px;
+}
+.arrow10.right {
+    right: 41%;
+    font-size: 30px;
+}  
+.position-indicators10 {
+    position: absolute;
+    top: 92%;
+    left: 50.8%;
+    transform: translateX(-50%);
+    display: flex;
+}  
+.indicator10 {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(57, 57, 57, 0.467);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}  
+.indicator10.active {
+    background-color: black;
+}
+.container-droite-bottle {
+    width: 49.1%;
+    background: #EAE5DD;
+}
+.descriptif-panier {
+    max-width: 58%;
+    margin-left: 43%;
+    margin-top: 8.37vh;
+    margin-right: 5.58vh;
+}
+.nb-produit-titre {
+    display: flex;
+}
+.nb-produit {
+    border-bottom: solid 1px black;
+}
+.nb-produit h6 {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-size: 2rem;    
+}
+.nb-produit p {
+    font-size: 0.77rem;
+}
+.free-payment-afterpay {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+}
+.adaptogenic-ingredients {
+    border-bottom: solid 1px black;
+    margin-bottom: 12px;
+}
+.adaptogenic-ingredients p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-top: 13px;
+}
+.trois-ingredients-panier {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+}
+.trois-ingredients-panier img {
+    width: 5%;
+    height: 5%;
+    margin: 0 10px;
+}
+.pack-size {
+    border-bottom: 1px black solid;
+}
+.pack-size span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding-top: 10px;
+}
+.pack-size p {
+    font-size: 0.9rem;
+    margin-bottom: 85px;
+}
+.add-to-bag p {
+    font-size: 0.9rem;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+.add-to-bag a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: black;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 16px 0;
+    width: 100%;
+    text-align: center;
+}
+.img1-slider-can-bottle {
+    margin-top: 7vh;
+    margin-left: 8.81vw;
+}
