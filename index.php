@@ -69,16 +69,52 @@
                 }
             }
             elseif($page==4){
-                include('view/view_golden_hour.php');
+                if (isset($_GET['product'])) {
+                    $product = $_GET['product'];
+                    if ($product == 'bottle') {
+                        include('view/view_golden_hour_bottle.php');
+                    } elseif ($product == 'can') {
+                        include('view/view_golden_hour_can.php');
+                    } else {
+                        include('view/view_golden_hour.php'); 
+                    }
+                } else {
+                    include('view/view_golden_hour.php'); 
+                }
             }
             elseif($page==5){
-                include('view/view_tres_rose.php');
+                if (isset($_GET['product'])) {
+                    $product = $_GET['product'];
+                    if ($product == 'can') {
+                        include('view/view_tres_rose_can.php');
+                    } 
+                } else {
+                    include('view/view_tres_rose.php'); 
+                }
             }
             elseif($page==6){
-                include('view/view_purple_lune.php');
+                if (isset($_GET['product'])) {
+                    $product = $_GET['product'];
+                    if ($product == 'can') {
+                        include('view/view_purple_lune_can.php');
+                    } 
+                } else {
+                    include('view/view_purple_lune.php'); 
+                }
             }
             elseif($page==7){
-                include('view/view_variety_pack.php');
+                if (isset($_GET['product'])) {
+                    $product = $_GET['product'];
+                    if ($product == 'starter') {
+                        include('view/view_packs_starter.php');
+                    } elseif ($product == 'variety') {
+                        include('view/view_packs_variety.php');
+                    } else {
+                        include('view/view_packs.php'); 
+                    }
+                } else {
+                    include('view/view_packs.php'); 
+                }
             }
             else {
                 include('view/view_home.php');
@@ -92,6 +128,5 @@
    
     ?>
 
-<script src=".//public/assets/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+<script src=".//public/assets/js/script.js"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

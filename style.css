@@ -50,7 +50,7 @@ li {
     margin-left: 5px;
 }
 .navbarlogo {
-    margin-left: 4.9rem;
+    margin-left: 11.9rem;
 }
 .navbardroite {
     margin-right: 2.9rem;
@@ -119,6 +119,7 @@ li {
     letter-spacing: -0.5px;
     font-size: 1.6rem;
     color: black;
+    text-align: center;
 }
 .submenu-item h2:hover {
     text-decoration: underline;
@@ -157,7 +158,7 @@ a.mg {
     align-items: center;
     text-align: center;
 }
-.btn-choix-produit-menu button {
+.btn-choix-produit-menu a {
     margin-top: 20px;
     text-decoration: none;
     border: none;
@@ -165,16 +166,36 @@ a.mg {
     font-weight: 700;
     font-size: 0.8rem;
     letter-spacing: 1px;
+    color: black;
+    justify-content: center;
 }
-.btn-choix-produit-menu button:hover {
+.btn-choix-produit-menu a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
-.btn-choix-produit-menu button:first-child {
-    margin-right: 24px;
+a#bottle-champignon2 {
+    text-align: right;
+    padding-right: 15px;
 }
-.btn-choix-produit-menu button:last-child {
-    margin-left: 24px;
+a#can-champignon2 {
+    text-align: left;
+    padding-left: 15px;
+}
+a#starter-button {
+    text-align: right;
+    padding-right: 15px;
+}
+a#variety-button {
+    text-align: left;
+    padding-left: 15px;
+}
+a.btn-bottle3 {
+    text-align: right;
+    padding-right: 15px;
+}
+a.btn-can3 {
+    text-align: left;
+    padding-left: 15px;
 }
 .hr-menu-deroulant {
     height: 16px;
@@ -203,10 +224,7 @@ a.mg {
     position: relative;
     text-align: center;
   }
-  .image-produit-menu img {
-    display: block;
-    margin: 0 auto;
-  }
+  
   .image-overlay2 {
     position: absolute;
     top: 0;
@@ -218,6 +236,10 @@ a.mg {
   .image-bg3 {
     left: 15px;
   }
+  .image-produit-menu img {
+    display: block;
+    margin: 0 auto;
+  }
   .image-overlay3 {
     position: absolute;
     top: 90px;
@@ -226,13 +248,13 @@ a.mg {
     transition: opacity 0.1s ease;
     left: 110px;
   }
-  .image-overlay4 {
+  .image-overlay5 {
     position: absolute;
-    top: 90px;
+    bottom: 5%;
     opacity: 0;
     z-index: 1; /* Place l'image overlay au-dessus de l'image de base */
     transition: opacity 0.1s ease;
-    left: 15px;
+    left: 25px;
   }
 /* ****************************************************************************
 /* *-*-*-*-*-*-*-*-*-*-*-*-* contenu slider ******************** 
@@ -1432,14 +1454,11 @@ input[id="email"]{
 }
 .image-bg5 {
     opacity: 1;
+    margin-top: 50px !important; 
   }
-.image-bg5, .image-overlay5 {
-    margin: 0;
-    padding: 0;
-}
+
 .image-overlay5 {
     opacity: 0; 
-    /* margin-top: 30px; */
 }
 .presentation-bouteille:hover .image-bg5, .presentation-can:hover .image-bg5 {
     opacity: 0; 
@@ -1867,3 +1886,45 @@ input[id="email"]{
     margin-top: 7vh;
     margin-left: 8.81vw;
 }
+.img2-slider-can-bottle {    
+    margin-left: 10vw;
+}
+.img3-slider-can-bottle {    
+    margin-left: 2.2vw;
+}
+.partie-lower-bottle {
+    text-decoration: none;
+    color: black;
+}
+.img4-slider-can-bottle {    
+    margin-left:8.5vw;
+    margin-top: 4rem;
+}
+.img5-slider-can-bottle {    
+    margin-left:2.5vw;    
+}
+.img6-slider-can-bottle {    
+    margin-right:2.5vw;    
+}
+.photo-purple-1 {
+    width: 100%;
+    height: 100%;
+}
+#scroll-to-top-button {
+    display: none; /* Le bouton est caché par défaut */
+    position: relative;
+    top: 5%;
+    right: 3%; 
+    color: #fff; /* Couleur du texte du bouton */
+    padding: 15px 15px; /* Espace intérieur du bouton */
+    max-height: 25px;
+    cursor: pointer; /* Curseur de la souris en forme de main au survol */
+    border: solid 1px white;
+    border-radius: 100px;
+    z-index: 1;
+    align-items: center;
+  }
+  
+/* ******************************************************************************************************************************************************
+/./././././././                                                        MEDIA QUERIES                                                    ./././././../././
+****************************************************************************************************************************************************** */

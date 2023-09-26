@@ -1,78 +1,122 @@
-//   REDIRECTION VERS PAGE PRODUIT MENU DEROULANT
-document.addEventListener('DOMContentLoaded', function() {
-  const bottleChampignon1 = document.getElementById('bottle-champignon1');
-  const bottleChampignon2 = document.getElementById('bottle-champignon2');
-  const bottleChampignon3 = document.getElementById('bottle-champignon3');
-  const canChampignon1 = document.getElementById('can-champignon1');
-  const canChampignon2 = document.getElementById('can-champignon2');
-  const canChampignon3 = document.getElementById('can-champignon3');
-  
-  bottleChampignon1.addEventListener('click', function(event) {
-      event.preventDefault();
-      window.location.href = 'index.php?page=3&product=bottle'; 
-  });
-
-  bottleChampignon2.addEventListener('click', function(event) {
-    event.preventDefault();
-    window.location.href = 'index.php?page=3&product=bottle'; 
-});
-  
-  bottleChampignon3.addEventListener('click', function(event) {
-      event.preventDefault();
-      window.location.href = 'index.php?page=3&product=bottle';
-  });
-
-  canChampignon1.addEventListener('click', function(event) {
-    event.preventDefault();
-    window.location.href = 'index.php?page=3&product=can';
-});
-
-canChampignon2.addEventListener('click', function(event) {
-    event.preventDefault();
-    window.location.href = 'index.php?page=3&product=can';
-});
-
-canChampignon3.addEventListener('click', function(event) {
-  event.preventDefault();
-  window.location.href = 'index.php?page=3&product=can';
-});
-});
-
 // ***************** CHANGEMENT IMAGE MENU DEROULANT **************************
-$(document).ready(function() {
-    $(".btn-bottle").hover(function() {
-      $(".image-overlay2").css("opacity", "0");
-      $(".image-bg2").css("opacity", "1"); // Rétablit l'opacité de l'image de base
-    });
-    $(".btn-can").hover(function() {
-      $(".image-overlay2").css("opacity", "1");
-      $(".image-bg2").css("opacity", "0"); // Réduit l'opacité de l'image de base
-    });
-  });
-  
-  $(document).ready(function() {
-    $(".btn-bottle3").hover(function() {
-      $(".image-overlay3").css("opacity", "0");
-      $(".image-bg3").css("opacity", "1"); // Rétablit l'opacité de l'image de base
-    });
-    $(".btn-can3").hover(function() {
-      $(".image-overlay3").css("opacity", "1");
-      $(".image-bg3").css("opacity", "0"); // Réduit l'opacité de l'image de base
-    });
-  });
-  
-  $(document).ready(function() {
-    $(".btn-bottle4").hover(function() {
-      $(".image-overlay4").css("opacity", "0");
-      $(".image-bg4").css("opacity", "1"); // Rétablit l'opacité de l'image de base
-    });
-  
-    $(".btn-can4").hover(function() {
-      $(".image-overlay4").css("opacity", "1");
-      $(".image-bg4").css("opacity", "0"); // Réduit l'opacité de l'image de base
-    });
-  });
+function handleBottleHover(event) {
+  const imageOverlay2 = document.querySelector(".image-overlay2");
+  const imageBg2 = document.querySelector(".image-bg2");
 
+  imageOverlay2.style.opacity = event.type === "mouseenter" ? "0" : "1";
+  imageBg2.style.opacity = event.type === "mouseenter" ? "1" : "0";
+}
+
+// Fonction pour gérer le hover sur le bouton CAN Champignon Dreams
+function handleCanHover(event) {
+  const imageOverlay2 = document.querySelector(".image-overlay2");
+  const imageBg2 = document.querySelector(".image-bg2");
+
+  imageOverlay2.style.opacity = event.type === "mouseenter" ? "1" : "0";
+  imageBg2.style.opacity = event.type === "mouseenter" ? "0" : "1";
+}
+
+// Ajout des écouteurs d'événements pour les boutons BOTTLE et CAN Champignon Dreams
+const bottleChampignon2 = document.getElementById("bottle-champignon2");
+const canChampignon2 = document.getElementById("can-champignon2");
+
+bottleChampignon2.addEventListener("mouseenter", handleBottleHover);
+bottleChampignon2.addEventListener("mouseleave", handleBottleHover);
+
+canChampignon2.addEventListener("mouseenter", handleCanHover);
+canChampignon2.addEventListener("mouseleave", handleCanHover);
+
+// Fonction pour gérer le hover sur le bouton BOTTLE Golden Hour
+function handleBottleHoverGoldenHour(event) {
+  const imageOverlay3 = document.querySelector(".image-overlay3");
+  const imageBg3 = document.querySelector(".image-bg3");
+
+  imageOverlay3.style.opacity = event.type === "mouseenter" ? "0" : "1";
+  imageBg3.style.opacity = event.type === "mouseenter" ? "1" : "0";
+}
+
+// Ajout des écouteurs d'événements pour le bouton BOTTLE Golden Hour
+const bottleGoldenHour = document.querySelector(".btn-bottle3");
+
+bottleGoldenHour.addEventListener("mouseenter", handleBottleHoverGoldenHour);
+bottleGoldenHour.addEventListener("mouseleave", handleBottleHoverGoldenHour);
+
+// Fonction pour gérer le hover sur le bouton CAN Golden Hour
+function handleCanHoverGoldenHour(event) {
+  const imageOverlay3 = document.querySelector(".image-overlay3");
+  const imageBg3 = document.querySelector(".image-bg3");
+
+  imageOverlay3.style.opacity = event.type === "mouseenter" ? "1" : "0";
+  imageBg3.style.opacity = event.type === "mouseenter" ? "0" : "1";
+}
+
+// Ajout des écouteurs d'événements pour le bouton CAN Golden Hour
+const canGoldenHour = document.querySelector(".btn-can3");
+
+canGoldenHour.addEventListener("mouseenter", handleCanHoverGoldenHour);
+canGoldenHour.addEventListener("mouseleave", handleCanHoverGoldenHour);
+
+
+function handleBottleHover(event) {
+  const imageOverlay2 = document.querySelector(".image-overlay2");
+  const imageBg2 = document.querySelector(".image-bg2");
+
+  imageOverlay2.style.opacity = event.type === "mouseenter" ? "0" : "1";
+  imageBg2.style.opacity = event.type === "mouseenter" ? "1" : "0";
+}
+
+// Ajout des écouteurs d'événements pour le bouton STARTER
+const starterButton = document.querySelector("#starter-button");
+starterButton.addEventListener("mouseenter", handleStarterHover);
+starterButton.addEventListener("mouseleave", handleStarterHover);
+
+// Ajout des écouteurs d'événements pour le bouton VARIETY
+const varietyButton = document.querySelector("#variety-button");
+varietyButton.addEventListener("mouseenter", handleVarietyHover);
+varietyButton.addEventListener("mouseleave", handleVarietyHover);
+
+// Fonction pour gérer le hover sur le bouton "STARTER"
+function handleStarterHover(event) {
+  const imageOverlay = document.querySelector(".image-overlay5");
+  const imageBg = document.querySelector(".image-bg5");
+
+  if (imageOverlay && imageBg) {
+    imageOverlay.style.opacity = event.type === "mouseenter" ? "0" : "1";
+    imageBg.style.opacity = event.type === "mouseenter" ? "1" : "0";
+  }
+}
+
+// Fonction pour gérer le hover sur le bouton "VARIETY"
+function handleVarietyHover(event) {
+  const imageOverlay = document.querySelector(".image-overlay5");
+  const imageBg = document.querySelector(".image-bg5");
+
+  if (imageOverlay && imageBg) {
+    imageOverlay.style.opacity = event.type === "mouseenter" ? "1" : "0";
+    imageBg.style.opacity = event.type === "mouseenter" ? "0" : "1";
+  }
+}
+// remonter tout en haut 
+// Sélectionnez le bouton de retour en haut par son identifiant
+const scrollToTopButton = document.getElementById("scroll-to-top-button");
+
+// Ajoutez un écouteur d'événements pour détecter le défilement de la page
+window.addEventListener("scroll", () => {
+  // Si la position de défilement est supérieure à 200 pixels, affichez le bouton
+  if (window.scrollY > 200) {
+    scrollToTopButton.style.display = "block";
+  } else {
+    scrollToTopButton.style.display = "none";
+  }
+});
+
+// Ajoutez un écouteur d'événements pour faire remonter la page lorsque le bouton est cliqué
+scrollToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0, // Faites défiler jusqu'au sommet de la page
+    behavior: "smooth" // Animation de défilement fluide
+  });
+});
 
 
 // ****************                                                  SLIDE 1 ******************
@@ -394,27 +438,85 @@ function updateSliderPosition() {
       indicator.classList.remove('active');
     }
   });
-}
-  
-// const canChampignon1 = document.getElementById('can-champignon1');
-// const canChampignon2 = document.getElementById('can-champignon2');
-// const canChampignon3 = document.getElementById('can-champignon3');
- 
-// // Ajoutez un gestionnaire d'événement de clic à chacun des éléments
-// canChampignon1.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     window.location.href = 'index.php?page=9'; // Redirection pour le premier élément
-// });
-
-// canChampignon2.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     window.location.href = 'index.php?page=9'; // Redirection pour le deuxième élément
-// });
-
-// canChampignon3.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     window.location.href = 'index.php?page=9'; // Redirection pour le troisième élément
-// });
-  
+};
 });
- 
+// //// SLIDER PRESENTATION BOUTEILLE GOLDEN
+// document.addEventListener('DOMContentLoaded', function() {
+//   const sliderContainer11 = document.querySelector('.container-middle-slider11');
+//   const slider11 = sliderContainer11.querySelector('.slider11');
+//   const slides11 = slider11.querySelectorAll('.slide11');
+//   const prevBtn11 = sliderContainer11.querySelector('#prevBtn11');
+//   const nextBtn11 = sliderContainer11.querySelector('#nextBtn11');
+//   const indicators11 = sliderContainer11.querySelectorAll('.indicator11');
+
+//   let currentIndex = 0;
+//   let startX = 0;
+//   let isDragging = false;
+
+//   prevBtn11.addEventListener('click', () => {
+//     if (currentIndex > 0) {
+//       currentIndex--;
+//       updateSliderPosition();
+//     }
+//   });
+
+//   nextBtn11.addEventListener('click', () => {
+//     if (currentIndex < slides11.length - 1) {
+//       currentIndex++;
+//       updateSliderPosition();
+//     }
+//   });
+
+//   indicators11.forEach((indicator, index) => {
+//     indicator.addEventListener('click', () => {
+//       currentIndex = index;
+//       updateSliderPosition();
+//     });
+//   });
+
+//   sliderContainer11.addEventListener('mousedown', (event) => {
+//     isDragging = true;
+//     startX = event.clientX;
+//   });
+
+//   sliderContainer11.addEventListener('mousemove', (event) => {
+//     if (!isDragging) return;
+
+//     const currentX = event.clientX;
+//     const diffX = currentX - startX;
+
+//     if (Math.abs(diffX) > 50) {
+//       isDragging = false;
+//       if (diffX > 0) {
+//         if (currentIndex > 0) {
+//           currentIndex--;
+//           updateSliderPosition();
+//         }
+//       } else {
+//         if (currentIndex < slides11.length - 1) {
+//           currentIndex++;
+//           updateSliderPosition();
+//         }
+//       }
+//     }
+//   });
+
+//   sliderContainer11.addEventListener('mouseup', () => {
+//     isDragging = false;
+//   });
+
+//   function updateSliderPosition() {
+//     const newPosition = -currentIndex * 100;
+//     slider11.style.transform = `translateX(${newPosition}vw)`;
+
+//     indicators11.forEach((indicator, index) => {
+//       if (index === currentIndex) {
+//         indicator.classList.add('active');
+//       } else {
+//         indicator.classList.remove('active');
+//       }
+//     });
+//   }
+// });
+
+  
