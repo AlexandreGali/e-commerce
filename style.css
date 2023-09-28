@@ -2,15 +2,15 @@
     padding: 0;
     margin: 0;
     font-family: 'Manrope', sans-serif;
+    box-sizing: border-box;
 }
-
 li {
     text-decoration: none;
     list-style: none;
 }
 /* font-family: 'Baskervville', serif; */
 .freeshiping {
-    display: inline-flex;
+    display: flex;
     width: 100%;
     height: 40px;
     text-align: center;
@@ -22,6 +22,12 @@ li {
     position: fixed;
     top: 0;
     z-index: 3;
+}
+.menu {
+    display: none;
+}
+.icone-panier-droite-tel {
+    display: none;
 }
 .navbar {
     display: flex;
@@ -255,6 +261,12 @@ a.btn-can3 {
     z-index: 1; /* Place l'image overlay au-dessus de l'image de base */
     transition: opacity 0.1s ease;
     left: 25px;
+  }
+  .photo-accueil-tel {
+    display: none;
+  }
+  .p-texte-apero-tel {
+    display: none;
   }
 /* ****************************************************************************
 /* *-*-*-*-*-*-*-*-*-*-*-*-* contenu slider ******************** 
@@ -509,52 +521,12 @@ a.btn-can3 {
     transform: rotate(180deg);
     margin-bottom: -30px;
 }
-.review1 p.texte {
+.review1 p.texte, .review2 p.texte, .review3 p.texte, .review4 p.texte, .review5 p.texte, .review6 p.texte {
     font-size: 0.9rem;
     line-height: 20px;
     margin-bottom: -30px;
 }
-.review2 p.texte {
-    font-size: 0.9rem;
-    line-height: 20px;
-    margin-bottom: -30px;
-}
-.review3 p.texte {
-    font-size: 0.9rem;
-    line-height: 20px;
-    margin-bottom: -30px;
-}
-.review4 p.texte {
-    font-size: 0.9rem;
-    line-height: 20px;
-    margin-bottom: -30px;
-}
-.review5 p.texte {
-    font-size: 0.9rem;
-    line-height: 20px;
-    margin-bottom: -30px;
-}
-.review6 p.texte {
-    font-size: 0.9rem;
-    line-height: 20px;
-    margin-bottom: -30px;
-}
-.review1 img {
-    margin-top: 65px;
-}
-.review2 img {
-    margin-top: 65px;
-}
-.review3 img {
-    margin-top: 65px;
-}
-.review4 img {
-    margin-top: 65px;
-}
-.review5 img {
-    margin-top: 65px;
-}
-.review6 img {
+.review1 img, .review2 img, .review3 img, .review4 img, .review5 img, .review6 img {
     margin-top: 65px;
 }
 .slider-container2 {
@@ -633,6 +605,7 @@ a.btn-can3 {
 .slide3 {
     flex: 0 0 100vw;
     display: flex; 
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
@@ -652,12 +625,10 @@ a.btn-can3 {
 }
 .image-container {
     position: relative;
-    /* overflow: hidden; */
     height: 0; /* Permettra de définir la hauteur de l'image */
     padding-bottom: 100%;
     width: 100%;
 }
-
 .image-bg,
 .image-overlay {
     position: absolute;
@@ -667,7 +638,6 @@ a.btn-can3 {
     height: 100%;
     transition: opacity 0.3s ease;
 }
-
 .image-overlay {
     opacity: 0; /* L'image overlay est invisible par défaut */
     max-width: 100%;
@@ -830,14 +800,14 @@ a.btn-can3 {
     display: flex;
     background-color: #EAE5DD;
 }
-.container-behind2 img {
-    margin: 2.1% 8.2%;
-    width: 37%;
-    height: 100%;
+.container-img-behind2 img {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
 }
 .partie-gauche-behind {
-    width: 55%;
-    margin: 150px 150px;
+    width: 45%;
+    margin: 140px 140px;
     max-height: 750px;
     margin-top: 160px;
 }
@@ -892,6 +862,9 @@ a.btn-can3 {
     transform: scaleX(0);
     opacity: 0;
 }
+.container-img-behind3 {
+    display: none;
+  }
 /* ******************* natural botanicals *********** */
 .container-botanicals {
     width: 100%;
@@ -954,6 +927,9 @@ a.btn-can3 {
 }
 
 /* ******** photo + pour one out ********* */
+.container-inspired-tel {
+    display: none;
+}
 .container-inspired {
     width: 100%;
     height: auto;
@@ -1042,6 +1018,9 @@ a.btn-can3 {
     cursor: pointer;
 }
 /* ***** find your flavor **** */
+.photo-flavor2 {
+    display: none;
+}
 .container-flavor {
     width: 100%;
     border-bottom: solid 1px black;
@@ -1049,7 +1028,7 @@ a.btn-can3 {
     background-color: #EAE5DD;
     height: 750px;
 }
-.container-flavor img {
+.photo-flavor img {
     margin-top: 6%;
     margin-left: 5%;
     max-width: 100%;
@@ -1131,6 +1110,9 @@ a.btn-can3 {
 }
 .container-photo-insta img {
     width: 100%;
+}
+.container-photo-insta2 {
+    display: none;
 }
 /* ****************** FOOTER ****************** */
 /* ********* partie gauche ************ */
@@ -1454,7 +1436,6 @@ input[id="email"]{
 }
 .image-bg5 {
     opacity: 1;
-    margin-top: 50px !important; 
   }
 
 .image-overlay5 {
@@ -1928,3 +1909,526 @@ input[id="email"]{
 /* ******************************************************************************************************************************************************
 /./././././././                                                        MEDIA QUERIES                                                    ./././././../././
 ****************************************************************************************************************************************************** */
+@media screen and (max-width: 768px) {
+    /* NAVBAR */
+    .freeshiping {
+        max-width: 100%;
+        /* position: sticky; */
+    }
+    .navbar {
+        max-width: 100%;
+        /* position: sticky; */
+        padding: 0;
+    }
+    .navbargauche {
+        display: none;
+    }
+    .navbardroite {
+        display: none;
+    }
+    .navbarlogo a {
+        width: 30%;
+    }
+    .navbarlogo {
+        margin-left: 40px;
+        align-items: center;
+    }
+        /* Styles pour le menu déroulant */
+.menu {
+    position: relative;
+    display: flex;
+  }
+  
+  .icone-menu-burger {
+    cursor: pointer;
+  }
+  .icone-menu-burger i {
+    padding-left: 15px;
+  }
+  .menu-deroulant {
+    position: absolute;
+    top: 40px;
+    left: -310px; /* Le menu sera initialement caché à gauche */
+    width: 290px;
+    background-color: #EAE5DD;
+    transition: left 0.3s ease; /* Ajoute une transition fluide */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .menu-deroulant span {
+    position: absolute;
+    top: 1%;
+    z-index: 1;
+  }
+  .fermer-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    font-size: 30px;
+  }
+  .menu-deroulant ul {
+    list-style-type: none;
+    padding-top: 0;
+  }  
+  .menu-deroulant ul li {
+    padding: 18px 25px;
+    text-align: left;
+    border-bottom: solid 1px black;
+    font-weight: 700;
+    font-size: 0.80rem;
+    letter-spacing: 0.1rem;
+  }  
+  .menu-deroulant ul li:first-child {
+    /* height: 25px; */
+    padding: 20px 10px;
+    padding-bottom: 21px;
+  }
+  .menu-deroulant ul li a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .icone-menu-burger {
+        display: flex;
+        padding-left: 3%;
+    }
+    .icone-panier-droite-tel {
+        display: flex;
+        padding-right: 5%;
+    }
+    .icone-panier-droite-tel i {
+        padding-left: 15%;
+    }
+
+    /* DEBUT SITE */
+    .slider-container {
+        display: none;
+    }
+    .photo-accueil-tel {
+        display: flex;
+        margin-top: 21%;
+      }
+      .photo-accueil-tel img {
+        max-width: 100%;
+      }
+      .container-apero {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .photo-apero {
+        justify-content: center;
+      }
+      .container-apero img{
+        width: 180%;
+        margin: 0;
+        padding-top: 15%;
+        margin-left: 25%;
+      }
+      
+      .texte-apero {
+        width: 100%;
+        margin: 0;
+        max-height: 100%;
+        margin-top: 0;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .texte-apero h2 {
+        font-size: 0.8rem;
+        justify-content: center;
+      }
+      .texte-apero h1 {
+        font-size: 2.4rem;
+        font-weight: 200;
+        padding-top: 0;
+        margin-left: 0;
+        padding-bottom: 10px;
+      }
+      .p-texte-apero {
+        display: none;
+      }
+      .p-texte-apero-tel {
+        display: flex;
+        text-align: center;
+      }
+      .texte-apero p {
+        letter-spacing: 0;
+        line-height: 22px;
+        font-size: 0.90rem;
+        margin-bottom: 0;
+        padding: 0 5%;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+      .texte-apero a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        line-height: 20px;
+        padding: 12px 40px;
+        margin-bottom: 20px;
+      }
+    .slider-container2 {
+        display: none;
+    }
+    /* SLIDER SHOP APERO */
+    .produit1, .produit2, .produit3, .produit4, .produit5, .produit6, .produit7, .produit8 {
+        border-bottom: solid 1px black;
+        width: 50%;
+        height: 515px;        
+    }
+    
+    .produit1 h4, .produit2 h4, .produit3 h4, .produit4 h4, .produit5 h4, .produit6 h4, .produit7 h4, .produit8 h4 {
+        font-size: 1.6rem;
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+    .produit1 a, .produit2 a, .produit3 a, .produit4 a, .produit5 a, .produit6 a, .produit7 a, .produit8 a {
+        margin: 10px;
+    }
+    .produit7 .image-container img {
+        margin-top: 5px;
+    }
+    .produit4 {
+        border-right: solid 1px black;
+    }
+    .titre-apero h1 {
+        font-size: 2.5rem;
+    }
+    .arrow3.left3 {
+        left: 1%;
+        top: 25%;
+        font-size: 30px;
+    }
+    .arrow3.right3 {
+        right: 1%;
+        top: 25%;
+        font-size: 30px;
+    }  
+/* MEET OUR FOUNDERS ET SUITE */
+    .container-founders {
+        display: flex;
+        flex-direction: column;
+    }
+    .container-founders img {
+        margin: 8% auto;
+        width: 85%;
+    }
+    .partie-droite-founders {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        align-items: center;
+    }
+    .partie-droite-founders h4 {
+        font-size: 2.3rem;
+        font-weight: 200;
+        margin-bottom: 15px;
+    }
+    .partie-droite-founders p {
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+    }
+    .partie-droite-founders a {
+        margin-bottom: 40px;
+    }
+    .container-behind {
+        height: 172px;
+    }
+    .container-behind2 {
+        flex-direction: column;
+    } 
+    .container-img-behind3 {
+        display: flex;
+    }
+    .container-img-behind3 img {
+        width: 80%;
+        margin: 40px auto;
+    }
+    .container-img-behind2 {
+        display: none;
+    }
+    .partie-gauche-behind {
+        width: 100%;
+        margin: 0;
+        margin-top: 0px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .partie-gauche-behind h4 {
+        font-size: 2.2rem;        
+    }
+    .p1-behind {
+        font-weight: 800;
+        line-height: 30px;
+        padding-bottom: 5px;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+    .partie-gauche-behind p {
+        padding: 0 10px;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .partie-gauche-behind a {
+        font-size: 0.75rem;
+        margin-bottom: 40px;
+        width: 18%;
+    }
+   /* BOTANICAL */
+   .container-botanicals {
+    width: 100%;
+    height: auto;
+   }
+   .texte-botanicals {
+    padding: 10px 10px;
+}
+    .texte-botanicals h4 {
+        font-size: 3rem;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .texte-botanicals p {
+        letter-spacing: 0.5px;
+        line-height: 22px;
+        font-size: 0.85rem;
+        margin-bottom: 35px;
+    }
+    .photos-botanicals {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-evenly;
+        padding-bottom: 50px;
+        margin: 0;
+    }
+    .photos-botanicals img {
+        margin: 10px 50px;
+    }
+    .container-inspired {
+        display: none;
+    }
+    .container-inspired-tel {
+        display: flex;
+    }
+    .container-inspired-tel img {
+        max-width: 100%;
+    }
+    .container-apero2 {
+        display: none;
+    }
+    .container-refer-a-friend {
+        display: none;
+    }
+    .photo-flavor {
+        display: none;
+    }
+    .photo-flavor2 {
+        display: flex;
+    }
+    .container-flavor {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .photo-flavor2 img {        
+        width: 79%;
+        padding: 40px 50px;
+        margin-left: 12%;
+    }
+    .texte-flavor {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .texte-flavor h2 {
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .texte-flavor h1 {
+        font-size: 2.8rem;
+        margin-left: 0;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .texte-flavor p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.85rem;
+    }
+    .texte-flavor {
+        margin-bottom: 45px;
+    }
+    .texte-flavor a {
+        font-size: 0.75rem;
+        margin-left: 38%;
+    }
+    .join-us h1 {
+        font-size: 3rem;
+    }
+    .container-photo-insta {
+        display: none;
+    }
+    .container-photo-insta2 {
+        display: flex;
+    }
+    .container-photo-insta2 img {
+        max-width: 100%;
+    }
+    .container-footer {
+        height: auto;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer-gauche {
+        width: 100%;
+        height: auto;
+        margin: 0 6.5%;
+        margin-top: 40px;
+    }
+    .footer-gauche h6 {
+        font-size: 1.8rem;
+    }
+    .footer-gauche p {
+        font-size: 0.8rem;
+    }
+    input[id="email"]{
+        width: 90%;
+    }      
+    .input-with-image {
+        position: relative;
+    }
+    .input-with-image img {
+        right: 20%; /* Ajustez ce nombre pour l'espacement de l'image */
+    }
+    #scroll-to-top-button {
+        display: flex; /* Le bouton est caché par défaut */
+        visibility: hidden; 
+      }
+    .footer-droite {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .footer-droite-gauche {
+        width: 45%;
+        height: auto;
+        margin-top: 40px;
+        margin-left: 10%;
+    }
+    .footer-droite-mid {
+        width: 40%;
+        height: auto;
+        margin-top: 40px;
+        margin-left: 5%;
+    }
+    .footer-droite-droite {
+        width: 40%;
+        height: auto;
+        margin-top: 40px;
+        margin-left: 10%;
+    }
+    .footer-bas {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
+    }
+    /* PAGE SHOP all */
+    .presentation-produit-champignon {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .presentation-texte {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 0;
+    }
+    .presentation-bouteille {
+        width: 100%;
+        border-right: solid 1px black;
+        border-bottom: solid 1px black;
+        box-sizing: border-box;
+        text-align: center;
+        padding-top: 35px;
+        position: relative;
+    }
+    .presentation-can {
+        width: 100%;
+        text-align: center;
+        padding-top: 0px;
+        position: relative;
+        background: #EAE5DD;
+    }
+    .presentation-bouteille img, .presentation-can img {
+        
+    cursor: pointer;
+    max-width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      left: 0%;
+      top: 0%;
+      transition: opacity 0.3s ease;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .image-overlay5 {
+        display: none;
+      }
+      .presentation-bouteille:hover .image-bg5, .presentation-can:hover .image-bg5 {
+        opacity: 1; 
+    }
+    .titre-shop-champignon h1 {
+        font-size: 3.5rem;
+    }
+    .titre-produit h3 {
+        font-size: 2.5rem;
+    }
+    .ingredient-produit p {
+        padding: 0 10px;
+    }
+    .image-bg5 {
+        opacity: 1;
+        width: 85%;
+        margin-top: 0;
+        padding: 0;
+      }
+      .texte-presentation-bottle {
+        margin-bottom: 15px;
+    }
+    .texte-presentation-can {
+        margin-bottom: 15px;
+    }
+    .flavor-notes {
+        padding: 0 15px;
+    }
+    /* PAGE PRODUIT BOUTEILLE  */
+
+}

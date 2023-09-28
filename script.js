@@ -118,6 +118,21 @@ scrollToTopButton.addEventListener("click", () => {
   });
 });
 
+// MENU BURGER
+
+// JavaScript pour ouvrir et fermer le menu
+const menuBurger = document.getElementById("menu-burger");
+const menuDeroulant = document.querySelector(".menu-deroulant");
+const fermerMenu = document.getElementById("fermer-menu");
+
+menuBurger.addEventListener("click", () => {
+  menuDeroulant.style.left = "0"; // Ouvrir le menu en cliquant
+});
+
+fermerMenu.addEventListener("click", () => {
+  menuDeroulant.style.left = "-310px"; // Fermer le menu en cliquant sur la croix
+});
+
 
 // ****************                                                  SLIDE 1 ******************
 // ****************                                                  SLIDE 1 ******************
@@ -440,83 +455,5 @@ function updateSliderPosition() {
   });
 };
 });
-// //// SLIDER PRESENTATION BOUTEILLE GOLDEN
-// document.addEventListener('DOMContentLoaded', function() {
-//   const sliderContainer11 = document.querySelector('.container-middle-slider11');
-//   const slider11 = sliderContainer11.querySelector('.slider11');
-//   const slides11 = slider11.querySelectorAll('.slide11');
-//   const prevBtn11 = sliderContainer11.querySelector('#prevBtn11');
-//   const nextBtn11 = sliderContainer11.querySelector('#nextBtn11');
-//   const indicators11 = sliderContainer11.querySelectorAll('.indicator11');
-
-//   let currentIndex = 0;
-//   let startX = 0;
-//   let isDragging = false;
-
-//   prevBtn11.addEventListener('click', () => {
-//     if (currentIndex > 0) {
-//       currentIndex--;
-//       updateSliderPosition();
-//     }
-//   });
-
-//   nextBtn11.addEventListener('click', () => {
-//     if (currentIndex < slides11.length - 1) {
-//       currentIndex++;
-//       updateSliderPosition();
-//     }
-//   });
-
-//   indicators11.forEach((indicator, index) => {
-//     indicator.addEventListener('click', () => {
-//       currentIndex = index;
-//       updateSliderPosition();
-//     });
-//   });
-
-//   sliderContainer11.addEventListener('mousedown', (event) => {
-//     isDragging = true;
-//     startX = event.clientX;
-//   });
-
-//   sliderContainer11.addEventListener('mousemove', (event) => {
-//     if (!isDragging) return;
-
-//     const currentX = event.clientX;
-//     const diffX = currentX - startX;
-
-//     if (Math.abs(diffX) > 50) {
-//       isDragging = false;
-//       if (diffX > 0) {
-//         if (currentIndex > 0) {
-//           currentIndex--;
-//           updateSliderPosition();
-//         }
-//       } else {
-//         if (currentIndex < slides11.length - 1) {
-//           currentIndex++;
-//           updateSliderPosition();
-//         }
-//       }
-//     }
-//   });
-
-//   sliderContainer11.addEventListener('mouseup', () => {
-//     isDragging = false;
-//   });
-
-//   function updateSliderPosition() {
-//     const newPosition = -currentIndex * 100;
-//     slider11.style.transform = `translateX(${newPosition}vw)`;
-
-//     indicators11.forEach((indicator, index) => {
-//       if (index === currentIndex) {
-//         indicator.classList.add('active');
-//       } else {
-//         indicator.classList.remove('active');
-//       }
-//     });
-//   }
-// });
 
   

@@ -107,7 +107,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-bottle">
       <h4>Golden Hour</h4>
       <p>BOTTLE</p>
-      <a href="">SHOP NOW</a>
+      <a href="index.php?page=4&product=bottle">SHOP NOW</a>
     </div>
   </div>
   <div class="presentation-can">
@@ -116,7 +116,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-can">
       <h4>Golden Hour</h4>
       <p>CAN</p>
-      <a href="">SHOP NOW</a>
+      <a href="index.php?page=4&product=can">SHOP NOW</a>
     </div>
   </div>
 </div>
@@ -171,7 +171,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-bottle">
       <h4>Purple Lune</h4>
       <p>BOTTLE</p>
-      <a href="">SHOP NOW</a>
+      <a href="index.php?page=6">SHOP NOW</a>
     </div>
   </div>
   <div class="presentation-can">
@@ -180,7 +180,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-can">
       <h4>Purple Lune</h4>
       <p>CAN</p>
-      <a href="">SHOP NOW</a>
+      <a href="index.php?page=6">SHOP NOW</a>
     </div>
   </div>
 </div>
@@ -234,7 +234,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-bottle">
       <h4>Champignon dreams</h4>
       <p>BOTTLE</p>
-      <a href="">SHOP NOW</a>
+      <a href="index.php?page=3&product=can">SHOP NOW</a>
     </div>
   </div>
   <div class="presentation-can">
@@ -243,7 +243,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-can">
       <h4>Champignon dreams</h4>
       <p>CAN</p>
-      <a href="">SHOP NOW</a>
+      <a href="index.php?page=3&product=can">SHOP NOW</a>
     </div>
   </div>
 </div>

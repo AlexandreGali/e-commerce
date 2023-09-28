@@ -9,6 +9,9 @@ function isPageActive($currentPage, $targetPage) {
 <html>
 <body>
 
+  <div class="photo-accueil-tel">
+    <img src="../../e-commerce/public/assets/img/page-accueil/photoAccueilTel.png" alt="photoAccueilTel">
+  </div>
 <!-- ****************** SLIDER ********************* -->
 <div class="slider-container">
         <div class="slider">
@@ -50,7 +53,8 @@ function isPageActive($currentPage, $targetPage) {
         <div class="texte-apero">
             <h2>DISCOVER CHAMPIGNON DREAMS</h2>
             <h1>It's Apéro Season</h1>
-            <p>Made with notes of sticky summer strawberries and bitter grapefruit,<br>Champignon Dreams serves up the perfect summer spritz vibes without the booze.</p>
+            <p class="p-texte-apero">Made with notes of sticky summer strawberries and bitter grapefruit,<br>Champignon Dreams serves up the perfect summer spritz vibes without the booze.</p>
+            <p class="p-texte-apero-tel">Made with notes of sticky summer strawberries and bitter grapefruit, Champignon Dreams serves up the perfect summer spritz vibes without the booze.</p>
             <a href="">SHOP NOW</a>
         </div>
     </div>
@@ -222,13 +226,18 @@ function isPageActive($currentPage, $targetPage) {
 </div>
 
 <div class="container-behind2">
+  <div class="container-img-behind3">
+    <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil6.png" alt="photoGoldenHour">
+  </div>  
   <div class="partie-gauche-behind">
       <div class="p1-behind">BEHIND THE SPRITZ</div>
       <h4>What's a non-alcoholic apéritif ?</h4>
       <p class="p2-behind">Popularized in France, the apéritif is a bittersweet botanical beverage meant for sipping slowly pre-dinner. Our apéritifs are entirely non-alcoholic, so instead of booze, we use natural adaptogens like lion's mane and l-theanine to give you the stress-soothing effect you look for in a complex drink.</p>
       <a href="">LEARN MORE</a>
   </div>
-  <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil6.png" alt="photoGoldenHour">
+  <div class="container-img-behind2">
+    <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil6.png" alt="photoGoldenHour">
+  </div>  
 </div>
 
 <!-- *********************** natural botanicals ************* -->
@@ -252,7 +261,9 @@ function isPageActive($currentPage, $targetPage) {
 <div class="container-inspired">
         <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil7.png" alt="photo4cans">
 </div>
-
+<div class="container-inspired-tel">
+  <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil7tel.png" alt="photo4cans">
+</div>
 <div class="container-apero2">
   <div class="photo-apero">
         <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil3.png" alt="BottleChampignon">
@@ -271,6 +282,9 @@ function isPageActive($currentPage, $targetPage) {
 
 <!-- ************ find your flavor + photos insta ************* -->
 <div class="container-flavor">
+  <div class="photo-flavor2">
+          <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil9.png" alt="photo4cans">
+    </div>
   <div class="texte-flavor">
     <h2>FILL UP YOUR OWN CUP.</h2>
     <h1>Find Your Flavor</h1>
@@ -289,7 +303,9 @@ function isPageActive($currentPage, $targetPage) {
 <div class="container-photo-insta">
         <img src="../../e-commerce/public/assets/img/page-accueil/imageaccueil10.png" alt="photoInsta">
 </div>
-
+<div class="container-photo-insta2">
+        <img src="../../e-commerce/public/assets/img/page-accueil/photosinstatel.png" alt="photoInsta">
+</div>
 
 
 
