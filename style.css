@@ -64,6 +64,10 @@ li {
 .navbardroite i {
     margin-left: 2px;
 }
+.navbardroite a {
+    text-decoration: none;
+    color: black;
+}
 .navbardroite li{
     display: inline-flex;
     padding: 0 0.7rem;
@@ -272,15 +276,15 @@ a.btn-can3 {
 /* *-*-*-*-*-*-*-*-*-*-*-*-* contenu slider ******************** 
 **************************************************************************** */
 .content {
-    padding-top: 4rem;
+    padding-top: 3.9rem;
     border-bottom: solid 1px black;
     margin-bottom: 10px;
     display: flex;
-    height: 53.75rem;
+    height: 57.8rem;
 }
 .katy {
     margin-top: 2.59rem;
-    height: 55.79rem;
+    height: auto;
     width: 50%; 
     /* modifier pour responsive !!!!!!!!!!!!!!! */
 }
@@ -1143,14 +1147,14 @@ a.btn-can3 {
     margin-bottom: 10px;
     color: white;
 }
-input[id="email"]{
+input[id="email2"]{
     width: 70%;
     border: solid 1px white;
     padding: 36px 20px;
     color: white;
     background-color: #000000;
 }
-#email::placeholder {
+#email2::placeholder {
     color: white; 
   }
   
@@ -1163,7 +1167,7 @@ input[id="email"]{
 .input-with-image img {
     position: absolute;
     top: 50%;
-    right: 25%; /* Ajustez ce nombre pour l'espacement de l'image */
+    right: 35%; /* Ajustez ce nombre pour l'espacement de l'image */
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -1635,6 +1639,9 @@ input[id="email"]{
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////// PAGE BOUTEILLE CHAMPIGNON
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.container-description-bottle-tel {
+    display: none;
+}
 .container-description-bottle {
     display: flex;
     width: 100%;
@@ -1897,7 +1904,7 @@ input[id="email"]{
     top: 5%;
     right: 3%; 
     color: #fff; /* Couleur du texte du bouton */
-    padding: 15px 15px; /* Espace intérieur du bouton */
+    padding: 0 13px;
     max-height: 25px;
     cursor: pointer; /* Curseur de la souris en forme de main au survol */
     border: solid 1px white;
@@ -1905,7 +1912,57 @@ input[id="email"]{
     z-index: 1;
     align-items: center;
   }
-  
+  /* PAGE LOG in  */
+    .container-formulaire-log-in {
+        background: #EAE5DD;
+        height: auto;
+        padding-top: 170px;
+    }
+    .container-formulaire-log-in h3 {
+        font-family: 'Baskervville', serif;
+        font-weight: 400;
+        letter-spacing: -0.2rem;
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    .create-account {
+        display: flex;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+    .create-account a {
+        padding-left: 7px;
+        text-decoration: underline;
+        color: black;
+    }
+    .formumu {
+        width: 23%;
+        margin: 0 auto;
+    }
+    .form1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .form1 label {
+        margin: 10px 0;
+    }
+    input#email, input#password {
+        width: 100%;
+        padding: 12px 10px;
+        color: #6d6b67;
+        background: #EAE5DD;
+        border: solid 1px black;
+    }
+    input[type="submit"] {
+        width: 100%;
+        margin: 40px 0;
+        background: #BB6B1E;
+        padding: 12px 0;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
 /* ******************************************************************************************************************************************************
 /./././././././                                                        MEDIA QUERIES                                                    ./././././../././
 ****************************************************************************************************************************************************** */
@@ -2430,5 +2487,175 @@ input[id="email"]{
         padding: 0 15px;
     }
     /* PAGE PRODUIT BOUTEILLE  */
-
+    .container-description-bottle {
+        display: none;
+    }
+    .container-description-bottle-tel {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #EAE5DD;
+        border-bottom: solid 1px black;
+    }
+    .container-middle-slider-tel {
+        width: 100%;
+        overflow: hidden;
+        position: relative; 
+        justify-content: center;
+      }
+      .slider10-tel {
+        display: flex;
+        width: 400%;
+        transition: transform 0.7s ease;
+        justify-content: center;
+      }
+      .slide10-tel {
+        flex: 0 0 100vw;
+        position: relative;
+        justify-content: center;
+      }
+    .content10-tel {
+        display: flex;
+        margin-top: 6.75vh;
+        margin-bottom: 6.75vh;
+        margin-left: 11%;
+        justify-content: center;
+        height: 500px;
+    }
+    
+    .arrow10-tel {
+        position: absolute;
+        top: 77.5%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .arrow10-tel.left {
+        left: 1cm;
+        font-size: 30px;
+    }
+    .arrow10-tel.right {
+        right: 11%;
+        font-size: 30px;
+    }  
+    .position-indicators10-tel {
+        position: absolute;
+        top: 79.5%;
+        left: 50.8%;
+        transform: translateX(-50%);
+        display: flex;
+    }  
+    .indicator10-tel {
+        width: 8px;
+        height: 8px;
+        background-color: rgba(57, 57, 57, 0.467);
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .container-description-bottle-tel2 {
+        padding: 25px 18px;
+        background: #EAE5DD;
+    }
+    .first-container-bottle {
+        border-bottom: solid 1px black;
+    }
+    .first-container-bottle p:nth-child(1){
+        font-size: 0.8rem;
+        color: #6d6b67;
+        padding-bottom: 10px;
+    }
+    .first-container-bottle h3 {
+        font-family: 'Baskervville', serif;
+        font-size: 2rem;
+        font-weight: 400;
+        padding-bottom: 10px;
+    }
+    .first-container-bottle p:nth-child(3){
+        font-size: 0.8rem;
+        padding-bottom: 10px;
+    }
+    .first-container-bottle p:nth-child(4){
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+    }
+    .second-container-bottle {
+        border-bottom: solid 1px black;
+        padding: 15px 0;
+    }
+    .second-container-bottle h6 {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    .third-container-bottle {
+        border-bottom: solid 1px black;
+        padding-bottom: 20px;
+    }
+    .third-container-bottle p {
+        padding: 15px 0;
+        font-size: 0.9rem;
+        line-height: 25px;
+        padding-bottom: 25px;
+    }
+    .third-container-bottle ul {
+        font-size: 0.85rem;
+        margin-bottom: 5px;    
+    }
+    .third-container-bottle ul::before {
+        content: "\2022"; 
+        display: inline-block;
+        width: 10px; 
+        margin-right: 7px; 
+        color: #000; 
+        font-weight: bold; 
+    }
+    .fourth-container-bottle {
+        border-bottom: solid 1px black;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+    }
+    .fourth-container-bottle p:nth-child(1) {
+        font-size: 0.8rem;
+        color: #6d6b67;
+        padding: 10px 0;
+        width: 100%;
+    }
+    .fourth-container-bottle p {
+        padding-right: 10px;
+    }
+    .fourth-container-bottle img {
+        max-width: 25px;
+        max-height: 20px;
+        padding-right: 5px;
+    }
+    .add-to-bag-tel {
+        padding: 10px 0;
+        border-bottom: solid 1px black;
+    }
+    .add-to-bag-tel a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background: black;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        padding: 16px 0;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+    .partie-reseaux-bottle-tel {
+        padding: 15px 0;
+        border-bottom: solid 1px black;
+    }
+    .partie-reseaux-bottle-tel a {
+        padding-left: 7px;
+    }
+    .formumu {
+        width: 80%;
+    }
 }

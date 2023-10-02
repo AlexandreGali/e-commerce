@@ -25,7 +25,7 @@ function isPageActive($currentPage, $targetPage) {
       <p>- Juicy and balanced -</p>
     </div>
     <div class="ingredient-produit">
-      <p><b>ADAPTOGENIC INGREDIENTS :</b> Ease into the evening with relaxing reishi mushroom<br> and passion flower. This dreamy duo is meant for kicking back with a snack and chillin’.</p>
+      <p><b>ADAPTOGENIC INGREDIENTS :</b> Ease into the evening with relaxing reishi mushroom and passion flower. This dreamy duo is meant for kicking back with a snack and chillin’.</p>
       <div class="trois-ingredients-dessins">
         <div class="ingre-dessin1">
           <img src="../../e-commerce/public/assets/img/champignon/reishimushroom.png" alt="ReishiMushroom">
@@ -80,6 +80,7 @@ function isPageActive($currentPage, $targetPage) {
     </div>
   </div>
 </div>
+
 
 </body>
 </html>

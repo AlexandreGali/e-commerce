@@ -3,6 +3,21 @@
   </div>
 
   <div class="navbar">
+  <div class="menu">
+  <div class="icone-menu-burger" id="menu-burger">
+    <i class="fa-solid fa-bars" style="color: #000000;"></i>
+  </div>
+  <div class="menu-deroulant">
+    <ul>
+      <li><span class="fermer-menu" id="fermer-menu">&times;</span></li>
+      <li class="shop-link"><a href="index.php?page=7">SHOP</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACT</a></li>
+      <li><a href="#">LOG IN</a></li>
+    </ul>
+  </div>
+  </div>
+
     <div class="navbargauche">
       <ul>
         <li>
@@ -75,7 +90,7 @@
                 </div>                  
               </div>
             <div class="btn-shop-all">
-                <a href="">SHOP ALL</a>
+                <a href="index.php?page=7">SHOP ALL</a>
             </div>
           </div>
           </li>
@@ -90,11 +105,15 @@
       <div class="navbardroite">
           <ul>
               <li><img src="../../e-commerce/public/assets/img/page-accueil/flag.png">US</li>
-              <li>CONTACT</li>
-              <li>LOG IN</li>
+              <li><a href="index.php?page=8">CONTACT</a></li>
+              <li><a href="index.php?page=9">LOG IN</a></li>
               <li><i class="fa-solid fa-magnifying-glass fa-rotate-90 fa-lg"></i></li>
-              <li><i class="fa-solid fa-bag-shopping fa-2xl"></i></li>
+              <li><i class="fa-solid fa-bag-shopping fa-xl"></i></li>
           </ul>
+      </div>
+      <div class="icone-panier-droite-tel">
+        <i class="fa-solid fa-magnifying-glass fa-rotate-90 fa-lg"></i>
+        <i class="fa-solid fa-bag-shopping fa-lg" style="color: #000000;"></i>
       </div>
 
   </div>

@@ -234,7 +234,7 @@ function isPageActive($currentPage, $targetPage) {
     <div class="texte-presentation-bottle">
       <h4>Champignon dreams</h4>
       <p>BOTTLE</p>
-      <a href="index.php?page=3&product=can">SHOP NOW</a>
+      <a href="index.php?page=3&product=bottle">SHOP NOW</a>
     </div>
   </div>
   <div class="presentation-can">

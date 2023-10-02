@@ -5,7 +5,7 @@
     <p>Sign up for sneak peeks, recipes, & more fun updates.</p>
     <form id="myForm">
     <div class="input-with-image">
-      <input type="text" id="email" placeholder="Email Adress">
+      <input type="text" id="email2" placeholder="Email Adress">
       <img src="../../e-commerce/public/assets/img/home/submitForm2.png">
     </div>
     </form>

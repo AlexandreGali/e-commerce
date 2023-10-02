@@ -109,5 +109,89 @@
 </div>
 </div>
 
+<!--                                      VERSION MOBILE -->
+<div class="container-description-bottle-tel">
+  <div class="container-middle-slider-tel">
+    <div class="slider10-tel">
+      <div class="slide10-tel">
+        <div class="content10-tel">
+          <img src="../../e-commerce/public/assets/img/golden/produit-golden-bottle-slider.png" class="img1-slider-champ-bottle-tel" alt="img1slide">
+        </div>
+      </div>
+
+      <div class="slide10-tel">
+        <div class="content10-tel">
+          <img src="../../e-commerce/public/assets/img/golden/produit-golden-bottle-hover-slider.png" alt="img2slide">
+        </div>
+      </div>
+
+      <div class="slide10-tel">
+        <div class="content10-tel">
+          <img src="../../e-commerce/public/assets/img/golden/slider-bottle-golden.png" alt="img3slide">
+        </div>
+      </div>
+
+      <div class="slide10-tel">
+        <div class="content10-tel">
+          <img src="../../e-commerce/public/assets/img/golden/slider-bottle-golden2.png" alt="img4slide">
+        </div>
+      </div>
+    </div>  
+  </div>
+<div class="position-indicators10-tel">
+    <div class="indicator10-tel"></div>
+    <div class="indicator10-tel"></div>
+    <div class="indicator10-tel"></div>
+    <div class="indicator10-tel"></div>
+  </div>
+
+  <div class="arrow10-tel left" id="prevBtn10-tel">&#8592;</div>
+  <div class="arrow10-tel right" id="nextBtn10-tel">&#8594;</div>
+</div>
+
+
+<div class="container-description-bottle-tel2">
+  <div class="first-container-bottle">
+    <p>SPARKLING NON-ALCOHOLIC APÉRITIF</p>
+    <h3>Golden Hour</h3>
+    <p>- Crisp, citrus zest, herbaceous -</p>
+    <p><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i>      135 reviews</p>
+  </div>
+  <div class="second-container-bottle">
+    <h6>$25.00 - 1 bottle</h6>
+  </div>
+  <div class="third-container-bottle">
+    <p>Golden Hour is made with lemon balm and L-theanine derived from green tea, botanicals known to enhance focus and promote relaxation. Bright and bracing, each sunny sip has notes of warm citrus, lemongrass, and leafy herbs. It’s the bite you crave, but full of zest.</p>
+      <li>
+          <ul>Non-alcoholic</ul>
+          <ul>35 calories per glass</ul>
+          <ul>No artificial colors or flavors</ul>
+          <ul>Lightly carbonated</ul>
+          <ul>Vegan & gluten-free</ul>
+          <ul>750 ml</ul>
+      </li>
+  </div>
+  <div class="fourth-container-bottle">
+    <p>ADAPTOGENIC INGREDIENTS</p>
+    <img src="../../e-commerce/public/assets/img/golden/lemonbalm.png" alt="PassionFlower"><p>Lemon Balm</p>
+    <img src="../../e-commerce/public/assets/img/champignon/l-theanine.png" alt="L-Theanine"><p>L-theanine</p>
+  </div>
+  <div class="add-to-bag-tel">
+    <p>Free domestic shipping on orders over $50</p>
+    <a href="">ADD TO BAG</a>
+  </div>
+  <div class="partie-reseaux-bottle-tel">
+    <p>Share on 
+      <a href=""><i class="fa-brands fa-square-facebook" style="color: #000000;"></i></a>
+      <a href=""><i class="fa-brands fa-pinterest-p" style="color: #000000;"></i></a>
+      <a href=""><i class="fa-solid fa-envelope" style="color: #000000;"></i></a>
+    </p>
+  </div>
+  <a href="index.php?page=4&product=can" class="partie-lower-bottle" id="can-champignon3">
+    <p>SHOP THE CAN <div class="arrow-can" id="arrow-shop-can">&#8594;</div></p>
+  </a>
+
+</div>
+
 </body>
 </html>

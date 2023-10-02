@@ -456,4 +456,84 @@ function updateSliderPosition() {
 };
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderContainer10tel = document.querySelector('.container-middle-slider-tel');
+  const slider10tel = sliderContainer10tel.querySelector('.slider10-tel');
+  const slides10tel = slider10tel.querySelectorAll('.slide10-tel');
+  const prevBtn10tel = document.getElementById('prevBtn10-tel');
+  const nextBtn10tel = document.getElementById('nextBtn10-tel');
+  const indicators10tel = document.querySelectorAll('.indicator10-tel');
+  
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
+  
+  prevBtn10tel.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSliderPosition();
+    }
+  });
+  
+  nextBtn10tel.addEventListener('click', () => {
+    if (currentIndex < slides10tel.length - 1) { // Correction ici
+      currentIndex++;
+      updateSliderPosition();
+    }
+  });
+  
+  indicators10tel.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      currentIndex = index;
+      updateSliderPosition();
+    });
+  });
+  
+  sliderContainer10tel.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    startX = event.clientX;
+  });
+  
+  sliderContainer10tel.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+  
+    const currentX = event.clientX;
+    const diffX = currentX - startX;
+  
+    if (Math.abs(diffX) > 50) {
+      isDragging = false;
+      if (diffX > 0) {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSliderPosition();
+        }
+      } else {
+        if (currentIndex < slides10tel.length - 1) { // Correction ici
+          currentIndex++;
+          updateSliderPosition();
+        }
+      }
+    }
+  });
+  
+  sliderContainer10tel.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+  
+  function updateSliderPosition() {
+    const newPosition = -currentIndex * 100;
+    slider10tel.style.transform = `translateX(${newPosition}vw)`;
+  
+    indicators10tel.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+  }
+});
+
+  
   
