@@ -1,7 +1,3 @@
-<?php 
-include('controller/controller_golden_hour_bottle.php');
-?>
-
 <html>
 <body>
 
