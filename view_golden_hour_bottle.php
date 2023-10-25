@@ -1,3 +1,7 @@
+<?php 
+include('controller/controller_golden_hour_bottle.php');
+?>
+
 <html>
 <body>
 
@@ -11,13 +15,23 @@
         <div class="descriptif-produit-bottle">
             <div class="partie-superieure-bottle">
                 <span>SPARKLING NON-ALCOHOLIC APÉRITIF</span>
-                <h2>Golden Hour</h2>
+                <<?php
+                $sql = "SELECT * FROM produits WHERE id_produit = 3";
+                $stmt = $bdd->query($sql);
+                $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($produits as $produit) {
+                    ?>
+                  <h2><?= $produit['nom_produit']; ?></h2>
                 <div class="flavor-bottle">- Crisp, citrus zest, herbaceous -</div>
                 <p><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i><i class="fa-solid fa-star" style="color: #000000;"></i>      126 reviews</p>
             </div>
             <div class="partie-milieu-bottle">
-                <p>Golden Hour is made with lemon balm and L-theanine derived from green tea,<br>botanicals known to enhance focus and promote relaxation. Bright and bracing, each<br>sunny sip has notes of warm citrus, lemongrass, and leafy herbs. It’s the bite you crave,<br>but full of zest.</p>
+              <p><?= $produit['description_produit']; ?></p>
             </div>
+            <?php
+                }
+          ?>
             <div class="partie-milieu-li-bottle">
                 <li>
                     <ul>Non-alcoholic</ul>
@@ -41,13 +55,28 @@
         </div>
     </div>
 
+    <?php
+        $sql = "SELECT * FROM images WHERE id_produit = 3 LIMIT 4";
+        $stmt = $bdd->query($sql);
+        $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($images as $image) {                  
+    ?>
     <div class="container-middle-slider">
   <div class="slider10">
+  <?php
+    $index = 0; // Initialisation de l'index
+    foreach ($images as $image) {
+      $index++;
+      ?>
     <div class="slide10">
-      <div class="content10">
-        <img src="../../e-commerce/public/assets/img/golden/produit-golden-bottle-slider.png" class="img2-slider-can-bottle" alt="can">
+        <div class="content10">
+          <img src="back-office/<?= $image['image']; ?>"  alt="<?= $image['nom_img']; ?>">
+        </div>
       </div>
-    </div>
+      <?php
+    }
+    ?>
 
     <div class="slide10">
       <div class="content10">
@@ -190,7 +219,9 @@
   <a href="index.php?page=4&product=can" class="partie-lower-bottle" id="can-champignon3">
     <p>SHOP THE CAN <div class="arrow-can" id="arrow-shop-can">&#8594;</div></p>
   </a>
-
+  <?php
+                }
+          ?>
 </div>
 
 </body>
