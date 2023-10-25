@@ -118,6 +118,155 @@ scrollToTopButton.addEventListener("click", () => {
   });
 });
 
+// PANIER
+const iconePanier = document.getElementById('icone-panier');
+const fenetrePanier = document.getElementById('fenetre-panier');
+const fermerPanier = document.getElementById('fermer-panier');
+
+iconePanier.addEventListener('click', () => {
+  fenetrePanier.style.display = 'block';
+});
+
+fermerPanier.addEventListener('click', () => {
+  fenetrePanier.style.display = 'none';
+});
+
+
+$(document).ready(function() {
+  var prixTotalPanier = 0; // Variable pour suivre le montant total du panier
+
+  // Gestionnaire de clic pour le bouton "ADD TO BAG"
+  $('.add-to-bag a').click(function(e) {
+    e.preventDefault();
+
+    var idProduit = $('input[name="quantite_produit"]:checked').data('id-produit');
+    var quantite = parseInt($('input[name="quantite_produit"]:checked').val());
+
+    // Chercher le produit dans le panier
+    var produitExiste = false;
+
+    // Parcourir le panier pour voir si le produit existe déjà
+    $('.produit-panier').each(function() {
+      if ($(this).data('id-produit') === idProduit) {
+        produitExiste = true;
+        var quantiteLotPanier = parseInt($(this).find('.quantite-lot').text());
+        quantiteLotPanier += quantite;
+
+        // Mettre à jour la quantité dans la ligne du produit
+        $(this).find('.quantite-lot').text(quantiteLotPanier);
+
+        // Mettre à jour le prix total pour ce produit
+        var prixUnitaire = parseFloat($(this).find('.prix-total').data('prix-unitaire'));
+        var nouveauPrixTotal = prixUnitaire * quantiteLotPanier;
+        $(this).find('.prix-total').text('Prix total: ' + nouveauPrixTotal.toFixed(2) + ' €');
+
+        // Mettre à jour le prix total du panier
+        prixTotalPanier += prixUnitaire * quantite;
+      }
+    });
+
+    if (!produitExiste) {
+      // Requête AJAX pour obtenir les informations du produit
+      $.ajax({
+        type: 'POST',
+        url: 'controller/requete_ajax.php',
+        data: { id_produit: idProduit, quantite: quantite },
+        success: function(response) {
+          var donneesProduit = JSON.parse(response);
+
+          if (donneesProduit.erreur) {
+            alert('Erreur : ' + donneesProduit.erreur);
+          } else {
+            var nomProduit = donneesProduit.nom_produit;
+            var prixUnitaire = donneesProduit.prix_produit;
+
+            // Créer une nouvelle ligne de produit dans le panier
+            var ligneProduit = '<div class="produit-panier" data-id-produit="' + idProduit + '">' +
+              '<p>' + nomProduit + '</p>' +
+              '<p>Quantité: <span class="quantite-lot">' + quantite + '</span></p>' +
+              '<p class="prix-total" data-prix-unitaire="' + prixUnitaire + '">Prix total: ' + (prixUnitaire * quantite).toFixed(2) + ' €</p>' +
+              '<img src="back-office/public/assets/img/' + donneesProduit.nom_img + '" alt="' + nomProduit + '"> ' +
+              '<button class="ajouter-lot">+</button>' +
+              '<button class="retirer-lot">-</button>' +
+              '</div>';
+
+            // Ajouter la ligne de produit à la structure du panier
+            $('.produits-selection-panier').append(ligneProduit);
+
+            // Mettre à jour le prix total du panier
+            prixTotalPanier += prixUnitaire * quantite;
+          }
+        },
+        error: function() {
+          alert('Erreur lors de la mise à jour du panier');
+        }
+      });
+    }
+
+    // Ouvrir le panier
+    $('#fenetre-panier').show();
+  });
+
+  // Gestionnaire de clic pour les boutons "Ajouter"
+  $('.ajouter-lot').click(function() {
+    var quantiteLot = parseInt($(this).parent().find('.quantite-lot').text());
+    quantiteLot++;
+    $(this).parent().find('.quantite-lot').text(quantiteLot);
+
+    // Mise à jour du prix total du panier
+    var prixUnitaire = parseFloat($(this).parent().find('.prix-total').data('prix-unitaire'));
+    var nouveauPrixTotal = prixUnitaire * quantiteLot;
+    $(this).parent().find('.prix-total').text('Prix total: ' + nouveauPrixTotal.toFixed(2) + ' €');
+
+    // Mise à jour du prix total du panier
+    prixTotalPanier += prixUnitaire;
+  });
+
+  // Gestionnaire de clic pour les boutons "Retirer"
+  $('.retirer-lot').click(function() {
+    var quantiteLot = parseInt($(this).parent().find('.quantite-lot').text());
+    if (quantiteLot > 1) {
+      quantiteLot--;
+      $(this).parent().find('.quantite-lot').text(quantiteLot);
+
+      // Mise à jour du prix total du panier
+      var prixUnitaire = parseFloat($(this).parent().find('.prix-total').data('prix-unitaire'));
+      var nouveauPrixTotal = prixUnitaire * quantiteLot;
+      $(this).parent().find('.prix-total').text('Prix total: ' + nouveauPrixTotal.toFixed(2) + ' €');
+
+      // Mise à jour du prix total du panier
+      prixTotalPanier -= prixUnitaire;
+    }
+  });
+
+  // Gestionnaire de clic pour fermer le panier (comme précédemment)
+  $('#fermer-panier').click(function() {
+    $('#fenetre-panier').hide();
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // MENU BURGER
 
 // JavaScript pour ouvrir et fermer le menu
@@ -535,5 +684,158 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+  // FORMUMU
+  const form = document.getElementById("form1");
+  const inputs = document.querySelectorAll('input[type="text"], input[type="password"]');
+  const progressBar = document.getElementById("progress-bar");
+  let firstName, lastName, phone, email, password, confirmPass;
   
+  const errorDisplay = (tag, message, valid) => {
+    const container = document.querySelector("." + tag + "-container");
+    const span = document.querySelector("." + tag + "-container > span");
   
+    if (!valid) {
+      container.classList.add("error");
+      span.textContent = message;
+    } else {
+      container.classList.remove("error");
+      span.textContent = message;
+    }
+  };
+  
+  const firstNameChecker = (value) => {
+    if (value.length > 0 && (value.length < 3 || value.length > 20)) {
+      errorDisplay("first-name", "The first name must be between 3 and 20 characters");
+      firstName = null;
+    } else if (!value.match(/^[a-zA-Z0-9_.-]*$/)) {
+      errorDisplay("first-name", "The first name must not contain special characters");
+      firstName = null;
+    } else {
+      errorDisplay("first-name", "", true);
+      firstName = value;
+    }
+  };
+  
+  const lastNameChecker = (value) => {
+    if (value.length > 0 && (value.length < 3 || value.length > 20)) {
+      errorDisplay("last-name", "The last name must be between 3 and 20 characters");
+      lastName = null;
+    } else if (!value.match(/^[a-zA-Z0-9_.-]*$/)) {
+      errorDisplay("last-name", "The last name must not contain special characters");
+      lastName = null;
+    } else {
+      errorDisplay("last-name", "", true);
+      lastName = value;
+    }
+  };
+  
+  const phoneChecker = (value) => {
+    if (!value.match(/^[0-9+ ]{10,15}$/)) {
+      errorDisplay("phone", "The phone number must contain only numbers, spaces, or '+' and have between 10 and 15 characters");
+      phone = null;
+    } else {
+      errorDisplay("phone", "", true);
+      phone = value;
+    }
+  };
+  
+  const emailChecker = (value) => {
+    if (!value.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)) {
+      errorDisplay("email", "The email is not valid");
+      email = null;
+    } else {
+      errorDisplay("email", "", true);
+      email = value;
+    }
+  };
+
+const passwordChecker = (value) => {
+  progressBar.classList = "";
+
+  if (
+    !value.match(
+      /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/
+    )
+  ) {
+    errorDisplay(
+      "password",
+      "Minimum of 8 characters, one uppercase letter, one digit, and one special character"
+    );
+    progressBar.classList.add("progressRed");
+    password = null;
+  } else if (value.length < 12) {
+    progressBar.classList.add("progressBlue");
+    errorDisplay("password", "", true);
+    password = value;
+  } else {
+    progressBar.classList.add("progressGreen");
+    errorDisplay("password", "", true);
+    password = value;
+  }
+  if (confirmPass) confirmChecker(confirmPass);
+};
+
+const confirmChecker = (value) => {
+  if (value !== password) {
+    errorDisplay("confirm", "The passwords do not match");
+    confirmPass = false;
+  } else {
+    errorDisplay("confirm", "", true);
+    confirmPass = true;
+  }
+};
+
+inputs.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    switch (e.target.id) {
+      case "first-name":
+        firstNameChecker(e.target.value);
+        break;
+      case "last-name":
+        lastNameChecker(e.target.value);
+        break;
+      case "phone": 
+        phoneChecker(e.target.value);
+        break;
+      case "email":
+        emailChecker(e.target.value);
+        break;
+      case "password":
+        passwordChecker(e.target.value);
+        break;
+      case "confirm":
+        confirmChecker(e.target.value);
+        break;
+      default:
+        nul;
+    }
+  });
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (firstName && lastName && phone && email && password && confirmPass) {
+    const data = {
+      firstName,
+      lastName,
+      phone,
+      email,
+      password,
+    };
+    console.log(data);
+
+    inputs.forEach((input) => (input.value = ""));
+    progressBar.classList = "";
+
+    firstName = null;
+    lastName = null;
+    phone = null;
+    email = null;
+    password = null;
+    confirmPass = null;
+    alert("Registration validated !");
+  } else {
+    alert("Please fill in the fields correctly");
+  }
+});
