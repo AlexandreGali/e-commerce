@@ -48,9 +48,10 @@ li {
     align-items: center;
     font-weight: 700;
     font-size: 0.80rem;
-    margin-left: 7px;
+    margin-left: 15px;
     letter-spacing: 0.1rem;
     padding-top: 40px;
+    color: black;
 }
 .navbargauche i {
     margin-left: 5px;
@@ -79,6 +80,43 @@ li {
 .navbardroite img {
     margin-right: 4px;
 }
+/* PANIER */
+.fenetre-panier {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 25%; /* Vous pouvez ajuster la largeur comme souhaité */
+    background-color: #EAE5DD;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    overflow-y: auto;
+    transition: ease-in-out 1s;
+  }
+  .produit-panier {
+    border-bottom: solid 1px black;
+  }
+  .fermer-panier {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #413f3b;
+  }
+  .titre-panier {
+    border-bottom: solid 1px black;
+  }
+  .titre-panier h3 {
+    font-family: 'Baskervville', serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 2rem;
+    color: black;
+    padding: 40px 30px;
+  }
+  
 /* /////////////////////////////////////////////////////////////////////////////////
 ////////         MENU DEROULANT 
 //////////////////////////////////////////////////////////////////////////////// */
@@ -1324,7 +1362,7 @@ input[id="email2"]{
     height: 915px;
 }
 .presentation-texte {
-    max-width: 30%;
+    max-width: 33.3%;
     border-right: solid 1px black;
     padding: 50px 35px;
 }
@@ -1733,7 +1771,6 @@ input[id="email2"]{
 .container-middle-slider {
     width: 46vw;
     overflow: hidden;
-    /* position: relative; */
     position: absolute; 
     z-index: 1; 
     left: 35%;
@@ -1858,7 +1895,7 @@ input[id="email2"]{
     margin-top: 18px;
     margin-bottom: 20px;
 }
-.add-to-bag a {
+.add-to-bag button {
     display: block;
     text-decoration: none;
     color: white;
@@ -1869,6 +1906,7 @@ input[id="email2"]{
     padding: 16px 0;
     width: 100%;
     text-align: center;
+    border: none;
 }
 .img1-slider-can-bottle {
     margin-top: 7vh;
@@ -1947,20 +1985,240 @@ input[id="email2"]{
     .form1 label {
         margin: 10px 0;
     }
-    input#email, input#password {
+    input#email, input#password, input#first-name, input#last-name, input#confirm, input#phone, input#name {
         width: 100%;
         padding: 12px 10px;
         color: #6d6b67;
         background: #EAE5DD;
         border: solid 1px black;
     }
+    input#message {
+        width: 100%;
+        padding: 12px 10px;
+        color: #6d6b67;
+        background: #EAE5DD;
+        border: solid 1px black;
+        height: 150px;
+    }
     input[type="submit"] {
         width: 100%;
         margin: 40px 0;
         background: #BB6B1E;
-        padding: 12px 0;
+        padding: 15px 0;
         border: none;
         color: white;
+        cursor: pointer;
+    }
+    .container-description-bottle-tel2 {
+        display: none;
+    }
+    .first-name-container span, .last-name-container span, .phone-container span, .email-container span, .password-container span, .confirm-container span {
+        display: block;
+        font-size: 0.8rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        color: red;
+        margin-bottom: 5px;
+      }
+      #security span {
+        display: inline;
+      }
+      .error input {
+        color: red;
+        border: 1px solid rgba(255, 0, 0, 0.527);
+      }
+      .error span {
+        visibility: visible;
+        opacity: 1;
+        color: red;
+      }
+      .progressRed {
+        background: red;
+        width: 33%;
+        visibility: visible;
+      }
+      .progressBlue {
+        background: #16d9e7;
+        width: 67%;
+        visibility: visible;
+      }
+      .progressGreen {
+        width: 100%;
+        background: #5ef9a4;
+        visibility: visible;
+      }
+      /* PAGE ABOUT */
+      .container-photo-about {
+        margin-top: 100px;
+      }
+      .container-photo-about img {
+        max-width: 100%;
+      }
+      .container-our-mission {
+        display: flex;
+        background: #EAE5DD;
+        padding: 45px 50px;
+        margin-top: -10px;
+        align-items: center;
+        border-bottom: solid 1px black;
+      }
+      .our-mission-description {
+        width: 45%;
+      }
+      .our-mission-description h1, .container-description-founders h1 {
+        font-family: 'Baskervville', serif;
+        font-size: 3.5rem;
+        font-weight: 200;
+        letter-spacing: -0.2rem;
+        margin-bottom: 20px;
+    }
+    .our-mission-description p, .container-description-founders p {
+        letter-spacing: 0.5px;
+        line-height: 25px;
+        font-size: 0.95rem;
+    }
+      .our-mission-photo {
+        width: 55%;
+        display: flex;
+        justify-content: center;
+        padding-left: 14%;
+      }
+      .our-mission-photo img {
+        max-width: 100%;
+      }
+    .container-founders-note {
+        display: flex;
+        padding: 40px 35px;
+        background: #EAE5DD;
+        border-bottom: solid 1px black;
+    }
+    .container-photo-founders {
+        width: 50%;
+    }
+    .container-photo-founders img {
+        max-width: 100%;
+    }
+    .container-description-founders {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+    }
+    .join-us2 {
+        background-color: #EAE5DD;
+        border-bottom: solid 11px black;
+        display: flex;
+        justify-content: center;;
+    }
+    .join-us2 a {
+        font-family: 'Baskervville', serif;
+        text-align: center;
+        font-size: 3.5rem;
+        font-weight: 500;
+        letter-spacing: -0.2rem;
+        padding: 30px 0;
+        color: black;
+        text-decoration: none;
+    }
+    .success-message {
+        position: absolute;
+        top: 72%;
+        right: 9.5%;
+        z-index: 1;    
+    }
+    /* PANIER */
+    .container-page {
+        padding: 0 20%;
+        padding-top: 9%;
+        padding-bottom: 3%;
+        background-color: #EAE5DD;
+    }
+    .titre-page-panier {
+        text-align: center;
+    }
+    .titre-page-panier h1 {
+        font-family: 'Baskervville', serif;
+        font-size: 4.5rem;
+        font-weight: 200;
+        letter-spacing: -0.2rem;
+        padding-bottom: 20px;
+    }
+    .entete-panier {
+        display: flex;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        border-bottom: solid 1px black;
+    }
+    .nom-produit-panier-entete {
+        width: 45%;        
+    }
+    .prix-produit-panier-entete, .quantite-produit-panier-entete, .prix-total-panier-entete {
+        width: 19%;
+        text-align: right;
+    }
+    .prix-produit-panier, .quantite-produit-panier, .prix-total-panier {
+        width: 24%;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container-produit-panier {
+        display: flex;
+        border-bottom: solid 1px black;
+    }
+    .photo-produit-panier {
+        text-align: center;
+        width: 12%;
+    }
+    .photo-produit-panier img {
+        max-width: 100%;
+        height: auto;
+    }
+    .nom-produit-panier {
+        padding-top: 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%; 
+    }
+    .nom-produit-panier h6 {
+        font-size: 0.85rem;
+        padding: 10px 0;
+    }
+    .nom-produit-panier p {
+        font-size: 0.90rem;
+    }
+    .recap-prix-final {
+        text-align: right;
+    }
+    .recap-prix-final h3 {
+        font-family: 'Baskervville', serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 12px 0;
+    }
+    .recap-prix-final p {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .checkout {
+        margin-top: 30px;
+    }
+    .checkout button {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background: black;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        padding: 16px 0;
+        width: 40%;
+        margin: 0 auto;
         cursor: pointer;
     }
 /* ******************************************************************************************************************************************************
@@ -1970,11 +2228,9 @@ input[id="email2"]{
     /* NAVBAR */
     .freeshiping {
         max-width: 100%;
-        /* position: sticky; */
     }
     .navbar {
         max-width: 100%;
-        /* position: sticky; */
         padding: 0;
     }
     .navbargauche {
@@ -2382,7 +2638,7 @@ input[id="email2"]{
         position: relative;
     }
     .input-with-image img {
-        right: 20%; /* Ajustez ce nombre pour l'espacement de l'image */
+        right: 35%; /* Ajustez ce nombre pour l'espacement de l'image */
     }
     #scroll-to-top-button {
         display: flex; /* Le bouton est caché par défaut */
@@ -2558,6 +2814,7 @@ input[id="email2"]{
     .container-description-bottle-tel2 {
         padding: 25px 18px;
         background: #EAE5DD;
+        display: block;
     }
     .first-container-bottle {
         border-bottom: solid 1px black;
@@ -2657,5 +2914,18 @@ input[id="email2"]{
     }
     .formumu {
         width: 80%;
+    }
+    .container-founders-note {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+    .container-photo-founders {
+        width: 100%;
+    }
+    .container-description-founders {
+        width: 100%;
+        align-items: center;
+        padding-left: 0px;
     }
 }
